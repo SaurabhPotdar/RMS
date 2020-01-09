@@ -2,7 +2,8 @@ Register User
 Register Company
 Login with session storage and role
 Add job
-Search job and apply
+Search job(Location and title-Software Developer, Frontend Developer, Dev Ops Engineer, Data Scientist, Data Analyst, Full stack Developer
+and apply)
 Add resume
 Search for candidates and download their resume
 Check the candidates who have applied for a job(First list of jobs posted by company will be displayed and then 
