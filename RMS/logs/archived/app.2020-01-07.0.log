@@ -1,0 +1,12 @@
+2020-01-07 16:19:03,884 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 59628 (C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS)
+2020-01-07 16:19:03,884 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-07 16:19:03,884 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-07 16:19:06,289 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.512 seconds (JVM running for 9335.495)
+2020-01-07 16:19:47,004 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 59628 (C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS)
+2020-01-07 16:19:47,005 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-07 16:19:47,005 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-07 16:19:49,179 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.224 seconds (JVM running for 9378.384)
+2020-01-07 17:00:40,723 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 1
+2020-01-07 17:00:40,747 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] File added to database
+2020-01-07 17:01:37,238 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 2
+2020-01-07 17:01:37,239 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] File added to database

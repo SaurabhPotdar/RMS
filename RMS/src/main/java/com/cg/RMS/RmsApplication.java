@@ -1,4 +1,4 @@
-package com.cg.RMS;
+package com.cg.rms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,0 +1,12 @@
+2020-01-09 12:49:29,836 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 27752 (C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS)
+2020-01-09 12:49:30,100 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-09 12:49:30,101 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-09 12:49:51,398 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 23.932 seconds (JVM running for 26.881)
+2020-01-09 16:17:11,031 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 27752 (C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS)
+2020-01-09 16:17:11,031 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-09 16:17:11,031 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-09 16:17:15,713 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 4.846 seconds (JVM running for 12471.13)
+2020-01-09 16:17:17,494 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 27752 (C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS)
+2020-01-09 16:17:17,494 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-09 16:17:17,494 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-09 16:17:19,838 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.396 seconds (JVM running for 12475.241)
