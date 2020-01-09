@@ -1,0 +1,13 @@
+<ng-container>
+    <form>
+        <tr>
+            <td>
+                <input type="file" id="file" multiple (change)="getFileDetails($event)" accept=".xls,.xlsx,.csv,.pdf" />
+            </td>
+        </tr>
+        <tr>
+            <button (click)="uploadFiles()" class="btn btn-info">Upload</button>
+
+        </tr>
+    </form>
+</ng-container>

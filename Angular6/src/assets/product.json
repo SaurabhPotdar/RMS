@@ -1,0 +1,15 @@
+[{
+    "prodId": 1004,
+    "prodName": "Mobile Phone",
+    "prodCost": 15235
+},
+{
+    "prodId": 1006,
+    "prodName": "Head Phones",
+    "prodCost": 1523
+},
+{
+    "prodId": 1008,
+    "prodName": "Charger",
+    "prodCost": 999
+}]

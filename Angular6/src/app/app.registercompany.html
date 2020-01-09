@@ -1,0 +1,150 @@
+<!-- <div class="form-group">
+  <tr>
+      <td>Password</td>
+      <td>
+              <input id="password" password="password" class="form-control"
+              required minlength="5"
+              [(ngModel)]="model.password" #password="ngModel" (blur)="validate()">
+        
+        <div *ngIf="password.invalid && (password.dirty || password.touched)"
+            class="alert alert-danger">
+          <div *ngIf="password.errors.required">
+      password is required.
+          </div>
+          <div *ngIf="password.errors.minlength">
+      password must be at least 5 characters long.
+          </div>
+        </div>
+      </td>
+  </tr>
+</div> -->
+
+<head>
+
+
+
+  <!-- Title Page-->
+  <title>Registration</title>
+
+  <!-- Icons font CSS-->
+  <link href="assets/loginregister/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet"
+      media="all">
+  <link href="assets/loginregister/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+  <!-- Font special for pages-->
+  <link
+      href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet">
+
+  <!-- Vendor CSS-->
+  <link href="assets/loginregister/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+  <link href="assets/loginregister/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+  <!-- Main CSS-->
+  <link href="assets/loginregister/css/main.css" rel="stylesheet" media="all">
+
+</head>
+
+<body>
+
+
+
+  <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins"
+      style="background-image: url(/assets/images/img_3.jpg);">
+
+
+      <div class="wrapper wrapper--w680">
+          <div class="card card-4">
+              <div class="card-body">
+                  <h2 class="title">Registration Form</h2>
+                  <form #f="ngForm" name="registerform" novalidate>
+
+                      <div class="form-group">
+
+                          <div class="row row-space">
+                              <div class="input-group">
+                                  <label class="label">Email: </label>
+                                  <input class="input--style-4" [(ngModel)]="model.email" type="email"
+                                      name="email" #email="ngModel"
+                                      [ngClass]="{'is-invalid':f.submitted && email.invalid }"
+                                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
+                              </div>
+                          </div>
+                          <div *ngIf="email.invalid && (email.dirty ||email.touched || f.submitted)"
+                              class="alert alert-danger">
+                              <div *ngIf="email.errors.required">
+                                  Email is required.
+                              </div>
+                              <div *ngIf="email.errors.pattern">Email must be a valid email address</div>
+                          </div>
+
+                          <div class="row row-space">
+                              <div class="input-group">
+                                  <label class="label">Password</label>
+                                  <input class="input--style-4" [(ngModel)]="model.password" type="password"
+                                      name="password" #password="ngModel"
+                                      [ngClass]="{'is-invalid':f.submitted && password.invalid }"
+                                      pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" required>
+                              </div>
+                          </div>
+                          <div *ngIf="password.invalid && (password.dirty ||password.touched || f.submitted)"
+                              class="alert alert-danger">
+                              <div *ngIf="password.errors.required">
+                                  Password is required.
+                              </div>
+                              <div *ngIf="password.errors.pattern">Enter valid password</div>
+                          </div>
+
+                          <div class="row row-space">
+                              <div class="input-group">
+                                  <label class="label">Company Name</label>
+                                  <input class="input--style-4" [(ngModel)]="model.companyName" type="text"
+                                      name="companyName" #companyName="ngModel"
+                                      [ngClass]="{'is-invalid':f.submitted && companyName.invalid }" required>
+                              </div>
+                          </div>
+                          <div *ngIf="companyName.invalid && (companyName.dirty ||companyName.touched || f.submitted)"
+                              class="alert alert-danger">
+                              <div *ngIf="companyName.errors.required">
+                                  Name is required.
+                              </div>
+                          </div>
+
+                          <div class="row row-space">
+                            <div class="input-group">
+                                <label class="label">Company Address</label>
+                                <input class="input--style-4" [(ngModel)]="model.companyAddress" type="text"
+                                    name="companyAddress" #companyAddress="ngModel"
+                                    [ngClass]="{'is-invalid':f.submitted && companyAddress.invalid }" required>
+                            </div>
+                        </div>
+                        <div *ngIf="companyAddress.invalid && (companyAddress.dirty ||companyAddress.touched || f.submitted)"
+                            class="alert alert-danger">
+                            <div *ngIf="companyAddress.errors.required">
+                                Address is required.
+                            </div>
+                        </div>
+
+                          <div class="p-t-15">
+                              <button (click)="registerCompany()" [disabled]="f.form.invalid"
+                                  class="btn btn--radius-2 btn--blue" type="submit">Register</button>
+                          </div>
+
+                      </div>
+                  </form>
+                  <div class="p-t-15">
+                      <a href="login"> Already a member? Login</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Jquery JS-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <!-- Vendor JS-->
+  <script src="vendor/select2/select2.min.js"></script>
+  <script src="vendor/datepicker/moment.min.js"></script>
+  <script src="vendor/datepicker/daterangepicker.js"></script>
+
+  <!-- Main JS-->
+  <script src="js/global.js"></script>

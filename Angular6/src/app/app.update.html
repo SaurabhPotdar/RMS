@@ -1,0 +1,26 @@
+<h3>Update Product</h3>
+    <table>
+        <tr>
+            <td>Product Id:</td>
+            <td>
+                <input type="number" [(ngModel)]="currProduct.prodId" disabled/>
+            </td>
+        </tr>
+        <tr>
+            <td>Product Name:</td>
+            <td>
+                <input type="text" [(ngModel)]="currProduct.prodName" />
+            </td>
+        </tr>
+        <tr>
+            <td>Product Cost:</td>
+            <td>
+                <input type="number" [(ngModel)]="currProduct.prodCost" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <input type="button" value="Update Product" (click)="updateProduct()" />
+        </td>
+    </tr>
+</table>

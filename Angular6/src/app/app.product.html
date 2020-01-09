@@ -1,0 +1,26 @@
+<h3>Add Product</h3>
+<table>
+    <tr>
+        <td>Product Id:</td>
+        <td>
+            <input type="number" [(ngModel)]="model.prodId" />
+        </td>
+    </tr>
+    <tr>
+        <td>Product Name:</td>
+        <td>
+            <input type="text" [(ngModel)]="model.prodName" />
+        </td>
+    </tr>
+    <tr>
+        <td>Product Cost:</td>
+        <td>
+            <input type="number" [(ngModel)]="model.prodCost" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="Add Product" (click)="addProduct()" />
+        </td>
+    </tr>
+</table>

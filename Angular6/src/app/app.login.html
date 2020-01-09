@@ -1,0 +1,165 @@
+<head>
+
+
+
+    <!-- Title Page-->
+    <title>Registration</title>
+
+    <!-- Icons font CSS-->
+    <link href="assets/loginregister/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet"
+        media="all">
+    <link href="assets/loginregister/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="assets/loginregister/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="assets/loginregister/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="assets/loginregister/css/main.css" rel="stylesheet" media="all">
+
+</head>
+
+<body>
+
+    <header class="site-navbar py-1" role="banner">
+
+        <div class="container">
+          <div class="row align-items-center">
+  
+            <div class="col-6 col-xl-2">
+              <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">Job<strong>start</strong></a></h1>
+            </div>
+  
+            <div class="col-10 col-xl-10 d-none d-xl-block">
+              <nav class="site-navigation text-right" role="navigation">
+  
+                <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                  <li class="active"><a href="index.html">Home</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li><a href="/about">About</a></li>
+                  <li><a href="/contact">Contact</a></li>
+                  <li><a href="/registercompany">Register Company</a></li>
+                  <li><a href="/registeruser">Register User</a></li>
+                  <!-- <li><a href="new-post.html"><span class="rounded bg-primary py-2 px-3 text-white"><span class="h5 mr-2">+</span> Post a Job</span></a></li> -->
+                </ul>
+              </nav>
+            </div>
+  
+            <div class="col-6 col-xl-2 text-right d-block">
+  
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#"
+                  class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+  
+            </div>
+  
+          </div>
+        </div>
+  
+      </header>
+
+    <!-- <div class="site-navbar mt-4">
+        <div class="container py-1">
+            <div class="row align-items-center">
+                <div class="col-8 col-md-8 col-lg-4">
+                    <h1 class="mb-0"><a href="home" class="text-white h2 mb-0"><strong>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Homeland<span
+                                    class="text-danger">.</span></strong></a></h1>
+                </div>
+                <div class="col-4 col-md-4 col-lg-8">
+                    <nav class="site-navigation text-right text-md-right site-navbar" role="navigation">
+
+                        <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#"
+                                class="site-menu-toggle js-menu-toggle text-white"><span
+                                    class="icon-menu h3"></span></a></div>
+
+                        <ul class="site-menu js-clone-nav d-none d-lg-block">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li><a href="register">Register</a></li>
+                            <li class="active"><a href="login">Login</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+
+            </div>
+        </div>
+    </div> -->
+
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins"
+        style="background-image: url(/assets/images/hero_2.jpg);">
+
+
+
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">Enter your credentials</h2>
+                    <form #f="ngForm" name="registerform" novalidate>
+
+                        <div class="form-group">
+
+                            <div class="row row-space">
+                                <div class="input-group">
+                                    <label class="label">Email: </label>
+                                    <input class="input--style-4" [(ngModel)]="loginDetails.email" type="email"
+                                        name="email" #email="ngModel"
+                                        [ngClass]="{'is-invalid':f.submitted && email.invalid }"
+                                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
+                                </div>
+                            </div>
+                            <div *ngIf="email.invalid && (email.dirty ||email.touched || f.submitted)"
+                                class="alert alert-danger">
+                                <div *ngIf="email.errors.required">
+                                    Email is required.
+                                </div>
+                                <div *ngIf="email.errors.pattern">Email must be a valid email address</div>
+                            </div>
+
+                            <div class="row row-space">
+                                <div class="input-group">
+                                    <label class="label">Password</label>
+                                    <input class="input--style-4" [(ngModel)]="loginDetails.password" type="password"
+                                        name="password" #password="ngModel"
+                                        [ngClass]="{'is-invalid':f.submitted && password.invalid }"
+                                        pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" required>
+                                </div>
+                            </div>
+                            <div *ngIf="password.invalid && (password.dirty ||password.touched || f.submitted)"
+                                class="alert alert-danger">
+                                <div *ngIf="password.errors.required">
+                                    Password is required.
+                                </div>
+                                <div *ngIf="password.errors.pattern">Enter valid password</div>
+                            </div>
+
+                            <div class="p-t-15">
+                                <button (click)="checkLogin()" [disabled]="f.form.invalid"
+                                    class="btn btn--radius-2 btn--blue" type="submit">Login</button>
+                            </div>
+
+                        </div>
+                    </form>
+                    <div class="p-t-15">
+                        <a href="register"> New here? Signup!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/global.js"></script>

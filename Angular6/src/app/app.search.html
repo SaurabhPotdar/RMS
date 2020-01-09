@@ -1,0 +1,23 @@
+<h3>Search Product</h3>
+
+<input type="number" [(ngModel)]="searchId" /><br>
+<button type="button" (click)=search() >Search</button>
+
+<hr>
+<div *ngIf="flag">
+    <h5>Product Details:</h5>
+    <table>
+        <tr>
+            <td>Product Id: </td>
+            <td><input type="number" [value]="product.prodId" disabled /><br></td>
+        </tr>
+        <tr>
+            <td>Product Name:</td>
+            <td><input type="text" [value]="product.prodName" disabled /><br></td>
+        </tr>
+        <tr>
+            <td>Product Cost:</td>
+            <td><input type="number" [value]="product.prodCost" disabled /></td>
+        </tr>
+    </table>
+</div>
