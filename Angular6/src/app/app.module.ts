@@ -18,6 +18,10 @@ import { UploadComponent } from './app.uploadcomponenet';
 import { Error404Component } from './app.errorcomponent';
 import { LoginComponent } from './app.logincomponent';
 import { BlogComponent } from './app.blogcomponent';
+import { CompanyComponent } from './app.companycomponent';
+import { Error403Component } from './app.error403component';
+import { UserComponent } from './app.usercomponent';
+import { LogoutComponent } from './app.logoutcomponent';
 
 //{path: 'show/:text', component: ShowComponent},
 const myroutes:Routes= [
@@ -35,6 +39,10 @@ const myroutes:Routes= [
     {path: 'upload', component: UploadComponent},
     { path: 'login', component:LoginComponent},
     { path: 'blog', component:BlogComponent},
+    { path: 'userpage', component:UserComponent},
+    { path: 'companypage', component:CompanyComponent},
+    { path: 'forbidden', component:Error403Component},
+    { path: 'logout', component:LogoutComponent},
     { path: '**', component:Error404Component}
 ];
 
@@ -59,8 +67,12 @@ const myroutes:Routes= [
         SearchJobComponent,
         UploadComponent,
         Error404Component,
+        Error403Component,
         LoginComponent,
-        BlogComponent
+        BlogComponent,
+        CompanyComponent,
+        UserComponent,
+        LogoutComponent
 		],
     providers: [ ],
     bootstrap: [AppComponent]

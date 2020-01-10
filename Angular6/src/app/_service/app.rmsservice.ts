@@ -17,6 +17,12 @@ export class RmsService{
         return this.myhttp.post('http://localhost:9088/admin/login',data);
     }
 
+    logout(){
+        console.log("In logout");
+        sessionStorage.removeItem("userId");
+        sessionStorage.removeItem("userRole");
+    }
+
     temp:any;
     email:String = 'saura@gmail.com';
 

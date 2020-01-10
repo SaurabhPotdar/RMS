@@ -2,7 +2,7 @@ Register User
 Register Company
 Login with session storage and role
 Add job
-Search job(Location and title-Software Developer, Frontend Developer, Dev Ops Engineer, Data Scientist, Data Analyst, Full stack Developer
+Search job(Location and title-Fresher, Software Developer, Frontend Developer, Dev Ops Engineer, Data Scientist, Data Analyst, Full stack Developer
 and apply)
 Add resume
 Search for candidates and download their resume

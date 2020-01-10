@@ -3,19 +3,20 @@ import {RmsService} from './_service/app.rmsservice'
 import { Router } from '@angular/router'
 
 @Component({
-    selector: 'userpage',
-    templateUrl: 'app.user.html'
+    selector: 'companypage',
+    template:``
 })
-export class UserComponent implements OnInit{
-    
+
+export class CompanyComponent implements OnInit{
+
     ngOnInit(){
 
-        if(!(sessionStorage.getItem('userRole') === "user")){
+        if(!(sessionStorage.getItem('userRole') === "company")){
                this.router.navigate(['forbidden']);
            }
 
     }
 
-    constructor(private service:RmsService, private router:Router){}       
+    constructor(private service:RmsService, private router:Router){  }
 
 }

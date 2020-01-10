@@ -24,11 +24,15 @@ export class LoginComponent  {
         this.model=data;
         if (this.model.role=='user') {
             sessionStorage.setItem('userId',this.model.userId);
+            sessionStorage.setItem('userRole',this.model.role);
             console.log(this.model.userId);
+            console.log(this.model.role);
             this.router.navigate(['userpage']);    
         } else {
             sessionStorage.setItem('userId',this.model.userId);
+            sessionStorage.setItem('userRole',this.model.role);
             console.log(this.model.userId);
+            console.log(this.model.role);
             this.router.navigate(['companypage']);
         }
         }
