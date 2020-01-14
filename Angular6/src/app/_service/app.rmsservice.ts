@@ -41,7 +41,8 @@ export class RmsService{
     }
 
     addJob(data:any){
-        return this.myhttp.post('http://localhost:9088/company/addjob?email='+this.email,data);
+        console.log(sessionStorage.getItem("userId"));
+        return this.myhttp.post('http://localhost:9088/company/addjob?userId='+sessionStorage.getItem("userId"),data);
     }
 
     searchJob(id:number){

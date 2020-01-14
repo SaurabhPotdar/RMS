@@ -75,34 +75,37 @@
 
               <div class="row row-space">
                 <div class="input-group">
-                  <label class="label">Job Title: </label>
-                  <input class="input--style-4" [(ngModel)]="model.designation" type="text" name="designation" #designation="ngModel"
-                    [ngClass]="{'is-invalid':f.submitted && designation.invalid }"
-                    pattern="[a-z0-9 ]" required>
+                    <label class="label">Email: </label>
+                    <input class="input--style-4" [(ngModel)]="user.email" type="email"
+                        name="email" #email="ngModel"
+                        [ngClass]="{'is-invalid':f.submitted && email.invalid }"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}" required>
                 </div>
-              </div>
-              <div *ngIf="designation.invalid && (designation.dirty ||designation.touched || f.submitted)" class="alert alert-danger">
-                <div *ngIf="designation.errors.required">
-                  Designation is required.
-                </div>
-                <div *ngIf="designation.errors.pattern">Designation cannot contain special characters</div>
-              </div>
-
-              <div class="row row-space">
-                <div class="input-group">
-                  <label class="label">Location</label>
-                  <input class="input--style-4" [(ngModel)]="model.location" type="text" name="location"
-                    #location="ngModel" [ngClass]="{'is-invalid':f.submitted && location.invalid }"
-                    pattern="[a-z0-9 ]" required>
-                </div>
-              </div>
-              <div *ngIf="location.invalid && (location.dirty ||location.touched || f.submitted)"
+            </div>
+            <div *ngIf="email.invalid && (email.dirty ||email.touched || f.submitted)"
                 class="alert alert-danger">
-                <div *ngIf="location.errors.required">
-                  Location is required.
+                <div *ngIf="email.errors.required">
+                    Email is required.
                 </div>
-                <div *ngIf="location.errors.pattern">Enter valid Location</div>
-              </div>
+                <div *ngIf="email.errors.pattern">Email must be a valid email address</div>
+            </div>
+
+            <div class="row row-space">
+                <div class="input-group">
+                    <label class="label">Password</label>
+                    <input class="input--style-4" [(ngModel)]="user.password" type="password"
+                        name="password" #password="ngModel"
+                        [ngClass]="{'is-invalid':f.submitted && password.invalid }"
+                        pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})" required>
+                </div>
+            </div>
+            <div *ngIf="password.invalid && (password.dirty ||password.touched || f.submitted)"
+                class="alert alert-danger">
+                <div *ngIf="password.errors.required">
+                    Password is required.
+                </div>
+                <div *ngIf="password.errors.pattern">Enter valid password</div>
+            </div>
 
               <div class="row row-space">
                 <div class="input-group">
@@ -159,9 +162,9 @@
 
               <div class="row row-space">
                 <div class="input-group">
-                  <label class="label">Position</label>
+                  <label class="label">Position </label>
                   <div class="rs-select2 js-select-simple select--no-search">
-                    <select name="Position" [(ngModel)]="user.position">
+                    <select name="Position" [(ngModel)]="user.position" required>
                       <option disabled="disabled" selected="selected">Position</option>
                       <option>Fresher</option>
                       <option>Software Developer</option>
