@@ -71,10 +71,23 @@ public class CompanyController {
 	 * @param job
 	 * @return
 	 */
+//	@PostMapping(value="/addjob")
+//	public ResponseEntity<?> addJob(@RequestParam("email") String email,@RequestBody Job job) {
+//		try {
+//			companyService.addJob(email, job);
+//			logger.trace("Added job");
+//			return new ResponseEntity<Job>(job,HttpStatus.OK);
+//		}
+//		catch(Exception exception) {
+//			logger.error("Caught exception in company/addjob Controller");
+//			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
+//		}
+//	}
 	@PostMapping(value="/addjob")
-	public ResponseEntity<?> addJob(@RequestParam("email") String email,@RequestBody Job job) {
+	public ResponseEntity<?> addJob(@RequestParam("userId") int id,@RequestBody Job job) {
 		try {
-			companyService.addJob(email, job);
+			System.out.println(id);
+			companyService.addJob(id, job);
 			logger.trace("Added job");
 			return new ResponseEntity<Job>(job,HttpStatus.OK);
 		}

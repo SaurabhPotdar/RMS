@@ -1,0 +1,27 @@
+2020-01-10 11:20:07,271 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 51824 (C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS)
+2020-01-10 11:20:07,409 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-10 11:20:07,410 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-10 11:20:17,917 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 11.923 seconds (JVM running for 14.663)
+2020-01-10 11:28:10,149 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Checking if credentials are valid
+2020-01-10 11:28:53,920 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-2] Checking if credentials are valid
+2020-01-10 11:40:39,373 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-4] Checking if credentials are valid
+2020-01-10 11:40:39,418 ERROR com.cg.rms.controller.AdminController [http-nio-9088-exec-4] Invalid credentials
+2020-01-10 11:40:50,548 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-5] Checking if credentials are valid
+2020-01-10 11:42:31,655 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-7] Checking if credentials are valid
+2020-01-10 11:54:12,550 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-9] Checking if credentials are valid
+2020-01-10 11:54:12,598 ERROR com.cg.rms.controller.AdminController [http-nio-9088-exec-9] Invalid credentials
+2020-01-10 11:54:17,889 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-10] Checking if credentials are valid
+2020-01-10 11:55:23,938 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-2] Checking if credentials are valid
+2020-01-10 12:19:53,487 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-4] Checking if credentials are valid
+2020-01-10 13:16:09,675 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 51824 (C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS)
+2020-01-10 13:16:09,675 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-10 13:16:09,675 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-10 13:16:13,938 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 4.345 seconds (JVM running for 6970.654)
+2020-01-10 13:18:20,299 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 51824 (C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS)
+2020-01-10 13:18:20,299 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-10 13:18:20,299 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-10 13:18:22,695 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.519 seconds (JVM running for 7099.411)
+2020-01-10 13:20:43,253 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 51824 (C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\PLP-Project\RMS)
+2020-01-10 13:20:43,253 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-10 13:20:43,253 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-10 13:20:45,806 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.615 seconds (JVM running for 7242.521)

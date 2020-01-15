@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.cg.rms.dto.Job;
 
-public interface JobRepository extends JpaRepository<Job, Long> {
+public interface JobRepository extends JpaRepository<Job, Integer> {
 	
 	 public List<Job> findByLocation(@Param("location") String location);
 	 

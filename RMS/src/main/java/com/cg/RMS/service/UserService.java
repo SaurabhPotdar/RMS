@@ -23,20 +23,20 @@ public interface UserService {
 	
 	public List<Job> searchJobByExperience(int experience);
 	
-	public List<Job> searchJobByLocation(String location);
-
 	public List<Job> searchJobByDesignation(String designation);
 
 	public Job searchJobById(int jobId);
 
-	public User searchUser(long userId);
+	public User searchUser(int userId);
 
-	public boolean applyForJob(long userId, long jobId);
+	public boolean applyForJob(int userId, int jobId);
 
 	public DatabaseFile getFile(String fileId);
 
-	public DatabaseFile storeFile(MultipartFile file, long userId);
+	public DatabaseFile storeFile(MultipartFile file, int userId);
 
-	public DatabaseFile downloadFile(long userId);
+	public DatabaseFile downloadFile(int userId);
+
+	public List<Job> searchJobByLocation(String location, int userId);
 
 }

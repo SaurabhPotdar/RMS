@@ -34,7 +34,7 @@ public class Job {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="job_id")
-	private long jobId;
+	private int jobId;
 	@Column(name="designation")
 	private String designation;
 	@Column(name="qualification")
@@ -65,7 +65,7 @@ public class Job {
 	@LastModifiedBy
 	private String modifiedBy;
 
-	public Job(long jobId, String designation, String qualification, int experience, double salary, String location,
+	public Job(int jobId, String designation, String qualification, int experience, double salary, String location,
 			Company company, Date createdDate, Date modifiedDate, String createdBy, String modifiedBy) {
 		super();
 		this.jobId = jobId;
@@ -85,11 +85,11 @@ public class Job {
 		super();
 	}
 
-	public long getJobId() {
+	public int getJobId() {
 		return jobId;
 	}
 
-	public void setJobId(long jobId) {
+	public void setJobId(int jobId) {
 		this.jobId = jobId;
 	}
 

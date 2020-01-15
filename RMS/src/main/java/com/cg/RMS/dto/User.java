@@ -4,7 +4,9 @@
 package com.cg.rms.dto;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -36,7 +38,7 @@ public class User {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="user_id")
-	private long userId;
+	private int userId;
 	@Column(name="first_name")
 	private String firstName;
 	@Column(name="email_Id")
@@ -55,9 +57,9 @@ public class User {
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="user_id")
 	private List<Qualification> qualification;
-	@OneToOne
+	@OneToMany
 	@JoinColumn(name="job_id")
-	private Job job;
+	private Map<Integer,Job> appliedJobs = new HashMap<>();
 	@OneToOne
 	@JoinColumn(name="file_id")
 	private DatabaseFile file;
@@ -81,10 +83,10 @@ public class User {
 	@LastModifiedBy
 	private String modifiedBy;
 	
-	public User(long userId, String firstName, @Email(message = "Enter valid email eg:abc@gmail.com") String email,
+	public User(int userId, String firstName, @Email(message = "Enter valid email eg:abc@gmail.com") String email,
 			String password, String position, int experience, String phoneNumber, String role,
-			List<Qualification> qualification, Job job, DatabaseFile file, Date createdDate, Date modifiedDate,
-			String createdBy, String modifiedBy) {
+			List<Qualification> qualification, Map<Integer, Job> appliedJobs, DatabaseFile file, Date createdDate,
+			Date modifiedDate, String createdBy, String modifiedBy) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
@@ -95,113 +97,201 @@ public class User {
 		this.phoneNumber = phoneNumber;
 		this.role = role;
 		this.qualification = qualification;
-		this.job = job;
+		this.appliedJobs = appliedJobs;
 		this.file = file;
 		this.createdDate = createdDate;
 		this.modifiedDate = modifiedDate;
 		this.createdBy = createdBy;
 		this.modifiedBy = modifiedBy;
 	}
-	
+
+
+
 	public User() {
 		super();
 	}
-	
-	public long getUserId() {
+
+
+
+	public int getUserId() {
 		return userId;
 	}
-	
+
+
+
 	public String getFirstName() {
 		return firstName;
 	}
-	
+
+
+
 	public String getEmail() {
 		return email;
 	}
-	
+
+
+
 	public String getPassword() {
 		return password;
 	}
-	
+
+
+
 	public String getPosition() {
 		return position;
 	}
-	
+
+
+
 	public int getExperience() {
 		return experience;
 	}
+
+
+
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
+
+
+
 	public String getRole() {
 		return role;
 	}
+
+
+
 	public List<Qualification> getQualification() {
 		return qualification;
 	}
-	public Job getJob() {
-		return job;
+
+
+
+	public Map<Integer, Job> getAppliedJobs() {
+		return appliedJobs;
 	}
+
+
+
 	public DatabaseFile getFile() {
 		return file;
 	}
+
+
+
 	public Date getCreatedDate() {
 		return createdDate;
 	}
+
+
+
 	public Date getModifiedDate() {
 		return modifiedDate;
 	}
+
+
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
+
+
+
 	public String getModifiedBy() {
 		return modifiedBy;
 	}
-	public void setUserId(long userId) {
+
+
+
+	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+
+
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
+
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+
+
 	public void setPosition(String position) {
 		this.position = position;
 	}
+
+
+
 	public void setExperience(int experience) {
 		this.experience = experience;
 	}
+
+
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
+
+
 	public void setRole(String role) {
 		this.role = role;
 	}
+
+
+
 	public void setQualification(List<Qualification> qualification) {
 		this.qualification = qualification;
 	}
-	public void setJob(Job job) {
-		this.job = job;
+
+
+
+	public void setAppliedJobs(Map<Integer, Job> appliedJobs) {
+		this.appliedJobs = appliedJobs;
 	}
+
+
+
 	public void setFile(DatabaseFile file) {
 		this.file = file;
 	}
+
+
+
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
+
+
+
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
 	}
+
+
+
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
+
+
+
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
+	
+	
 	
 	
 		

@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 import com.cg.rms.dto.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Integer> {
 	
-	public User findByUserId(@Param("userId") long userId);
+	public User findByUserId(@Param("userId") int userId);
 	
 	public User findByEmail(@Param("email") String email);
 	

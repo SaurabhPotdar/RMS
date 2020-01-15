@@ -55,13 +55,19 @@ public class CompanyServiceImpl implements CompanyService{
 	 * find the company and add job.
 	 */
 	@Override
-	public boolean addJob(String email, Job job) {
+	public boolean addJob(int id, Job job) {
 		//First find the company which is logged in.
-		Company company = companyRepository.findByEmail(email);
+		System.out.println("1");
+		Company company = companyRepository.findById(id).orElse(null);
+		System.out.println("2");
 		if(company!=null) {
+			System.out.println("3");
+			System.out.println("4");
 			logger.trace("Found Company with Id: "+company.getCompanyId());
 			job.setLocation(job.getLocation().toUpperCase());
+			System.out.println("5");
 			job.setDesignation(job.getDesignation().toUpperCase());
+			System.out.println("6");
 			job.setCompany(company);
 			List<Job> jobList = company.getJobs();
 			jobList.add(job);
@@ -70,7 +76,8 @@ public class CompanyServiceImpl implements CompanyService{
 			return true;
 		}
 		else {
-			logger.error("Company not found with email: "+email);
+			System.out.println("4");
+			logger.error("Company not found with id: "+id);
 			throw new RmsException("Company not found");
 		}
 	}

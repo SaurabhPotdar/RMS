@@ -31,7 +31,7 @@ public class Company {
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="company_id")
-	private long companyId;
+	private int companyId;
 	@Column(name="email_Id")
 	@Email(message="Enter valid email eg:abc@gmail.com")
 	private String email;
@@ -63,7 +63,7 @@ public class Company {
 	
 	
 
-	public Company(long companyId, @Email(message = "Enter valid email eg:abc@gmail.com") String email, String password,
+	public Company(int companyId, @Email(message = "Enter valid email eg:abc@gmail.com") String email, String password,
 			String companyName, String companyAddress, List<Job> jobs, Date createdDate, Date modifiedDate,
 			String createdBy, String modifiedBy) {
 		super();
@@ -84,11 +84,11 @@ public class Company {
 		super();
 	}
 
-	public long getCompanyId() {
+	public int getCompanyId() {
 		return companyId;
 	}
 
-	public void setCompanyId(long companyId) {
+	public void setCompanyId(int companyId) {
 		this.companyId = companyId;
 	}
 

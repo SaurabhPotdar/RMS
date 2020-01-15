@@ -112,11 +112,11 @@ public class UserController {
 	 * @return
 	 */
 	@GetMapping(value="/searchbylocation")
-	public ResponseEntity<?> searchByLocation(@RequestParam("location") String location) {
+	public ResponseEntity<?> searchByLocation(@RequestParam("location") String location, @RequestParam("userId") int userId) {
 		try {
 			//Converting it to uppercase to avoid problems while searching with Spring Data
 			location = location.toUpperCase();
-			List<Job> jobList = userService.searchJobByLocation(location);
+			List<Job> jobList = userService.searchJobByLocation(location,userId);
 			return new ResponseEntity<List<Job>>(jobList,HttpStatus.OK);
 		}
 		catch(Exception exception) {
@@ -126,12 +126,12 @@ public class UserController {
 	}
 	
 	/**
-	 * Apply for a job. User will be displayed job and when he clicks on apply button job id is passed.
+	 * Apply for a job. User will be displayed list of jobs and when he clicks on apply button job id is passed.
 	 * @param jobId
 	 * @return
 	 */
 	@PutMapping(value="/applyforjob")
-	public ResponseEntity<?> applyForJob(@RequestParam("jobId") int jobId, @RequestParam("userId") long userId){
+	public ResponseEntity<?> applyForJob(@RequestParam("jobId") int jobId, @RequestParam("userId") int userId){
 		try {
 			userService.applyForJob(userId, jobId);
 			logger.trace("User: "+userId+" successfully applied for job: "+jobId);
@@ -149,9 +149,10 @@ public class UserController {
 	 * @return
 	 */
 	@PostMapping("/uploadFile")
-    public Response uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("userId") long userId) {
+    public Response uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("userId") int userId) {
+		System.out.println("In controller 1");
     	DatabaseFile fileName = userService.storeFile(file,userId);
-
+    	System.out.println("In controller 2");
         String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
                 .path(fileName.getFileName())
@@ -167,7 +168,7 @@ public class UserController {
      * @return
      */
 	@PostMapping("/uploadMultipleFiles")
-    public List<Response> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @RequestParam("userId") long userId) {
+    public List<Response> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files, @RequestParam("userId") int userId) {
         return Arrays.asList(files)
                 .stream()
                 .map(file -> uploadFile(file,userId))
@@ -180,7 +181,7 @@ public class UserController {
 	 * @return
 	 */
 	@GetMapping("/downloadFile")
-	public ResponseEntity<?> downloadFile(@RequestParam("userId") long userId){
+	public ResponseEntity<?> downloadFile(@RequestParam("userId") int userId){
 		try {
 			DatabaseFile databaseFile = userService.downloadFile(userId);
 			return ResponseEntity.ok()

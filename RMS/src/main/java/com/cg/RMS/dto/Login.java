@@ -3,9 +3,9 @@ package com.cg.rms.dto;
 public class Login {
 	
 	private String role;
-	private long userId;
+	private int userId;
 	
-	public Login(String role, long userId) {
+	public Login(String role, int userId) {
 		super();
 		this.role = role;
 		this.userId = userId;

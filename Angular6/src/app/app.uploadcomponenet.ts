@@ -30,7 +30,7 @@ export class UploadComponent  {
       for (var i = 0; i < this.myFiles.length; i++) { 
         frmData.append("file", this.myFiles[i]);
       }
-      frmData.append("userId","2");
+      frmData.append("userId","1");
       this.myhttp.post('http://localhost:9088/user/uploadFile',frmData).subscribe(
         data => {
           // SHOW A MESSAGE RECEIVED FROM THE WEB API.

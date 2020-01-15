@@ -23,9 +23,9 @@ public interface CompanyService {
 	
 	public List<User> searchUserByExperience(int experience);
 
-	public boolean addJob(String email, Job job);
-	
 	public Object login(String email, String password);
+
+	public boolean addJob(int id, Job job);
 	
 	
 	

@@ -4,7 +4,9 @@
 package com.cg.rms.service;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.transaction.Transactional;
 
@@ -136,11 +138,19 @@ public class UserServiceImpl implements UserService {
 	 * 
 	 */
 	@Override
-	public List<Job> searchJobByLocation(String location) {
+	public List<Job> searchJobByLocation(String location, int userId) {
 		List<Job> jobList = jobRepository.findByLocation(location);
+		List<Job> newJobList = new ArrayList<>();  //To store all job for which user has not applied yet
 		if(jobList.size()!=0) {
-			logger.trace("Getting jobList");
-			return jobList;
+			User user = searchUser(userId);
+			Map<Integer,Job> appliedJob = user.getAppliedJobs();
+			for(Job job:jobList) {
+				//Check is user has applied for job, if not add it to list to display to user.
+				if(!appliedJob.containsKey(job.getJobId())) {
+					newJobList.add(job);  //Return as a list to display to user
+				}
+			}
+			return newJobList;
 		}
 		else {
 			logger.error("No jobs found");
@@ -153,7 +163,7 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public Job searchJobById(int jobId) {
-		Job job = jobRepository.findById((long) jobId).orElse(null);
+		Job job = jobRepository.findById(jobId).orElse(null);
 		if(job!=null) {
 			logger.trace("Job found with Id: "+jobId);
 			return job;
@@ -168,7 +178,7 @@ public class UserServiceImpl implements UserService {
 	 * 
 	 */
 	@Override
-	public User searchUser(long userId) {
+	public User searchUser(int userId) {
 		User user = userRepository.findByUserId(userId);
 		if(user!=null) {
 			logger.trace("User found with Id: "+userId);
@@ -181,24 +191,31 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	/**
-	 * 
+	 * Description: We check if user has already applied for job, if not we add it to Map of appliedJob
 	 */
 	@Override
-	public boolean applyForJob(long userId, long jobId) {
+	public boolean applyForJob(int userId, int jobId) {
 		User user = searchUser(userId);
 		Job job = searchJobById((int) jobId);
-		user.setJob(job);
+		Map<Integer,Job> appliedJob = user.getAppliedJobs();
+		//Check is user has already applied for the job
+		if(appliedJob.containsKey(jobId)) {
+			throw new RmsException("Already applied for this job");
+		}
+		//If not, add it to the map.
+		//This map is used so when we display jobs to the user, we dont show job he/she has already applied for.
+		appliedJob.put(jobId, job);
+		user.setAppliedJobs(appliedJob);
 		userRepository.save(user);
 		logger.trace("Applying for job in service");
-		return true;
-		
+		return true;	
 	}
 	
 	/**
 	 * 
 	 */
 	@Override
-	public DatabaseFile storeFile(MultipartFile file, long userId) {
+	public DatabaseFile storeFile(MultipartFile file, int userId) {
         // Normalize file name
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
 
@@ -212,6 +229,7 @@ public class UserServiceImpl implements UserService {
             DatabaseFile dbFile = new DatabaseFile(fileName, file.getContentType(), file.getBytes());
 
             User user = searchUser(userId);
+            System.out.println(user);
             user.setFile(dbFile);
             userRepository.save(user);
             dbFileRepository.save(dbFile);
@@ -235,7 +253,7 @@ public class UserServiceImpl implements UserService {
      * 
      */
 	@Override
-    public DatabaseFile downloadFile(long userId) {
+    public DatabaseFile downloadFile(int userId) {
     	User user = searchUser(userId);
     	DatabaseFile file = user.getFile();
     	if(file==null) {

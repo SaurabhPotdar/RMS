@@ -49,6 +49,8 @@ public class AdminController {
 			if(object instanceof User) {
 				return new ResponseEntity<Object>(object,HttpStatus.OK);
 			}
+			//If no user found then service method will throw an exception
+			//So no need to check for instance of Company
 			else{
 				return new ResponseEntity<Object>(object,HttpStatus.OK);
 			}
