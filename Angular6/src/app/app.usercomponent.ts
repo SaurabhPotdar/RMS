@@ -9,7 +9,7 @@ import { Router } from '@angular/router'
 export class UserComponent implements OnInit{
 
     //searchData:any={location:"", jobTitle:""};
-    searchData:any={location:""};
+    searchData:any={location:"",designation:""};
 
     jobList:any[] = [];
 
