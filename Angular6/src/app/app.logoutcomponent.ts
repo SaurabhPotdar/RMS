@@ -4,20 +4,17 @@ import { Router } from '@angular/router'
 
 @Component({
     selector: 'logout',
-    templateUrl: 'app.logout.html'
+    template: ``
 })
 
-export class LogoutComponent{
+export class LogoutComponent implements OnInit{
+    
+    ngOnInit(): void {
+        this.service.logout();
+        this.router.navigate(['home']);
+    }
 
     constructor(private service:RmsService, private router:Router){  }
 
-    logout(){
-        console.log(sessionStorage.getItem("userId"));
-        console.log(sessionStorage.getItem("userRole"));
-        this.service.logout();
-        console.log(sessionStorage.getItem("userId"));
-        console.log(sessionStorage.getItem("userRole"));
-        this.router.navigate(['home']);
-    }
 
 }

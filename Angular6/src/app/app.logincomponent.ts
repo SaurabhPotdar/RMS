@@ -20,6 +20,7 @@ export class LoginComponent  {
         formData.append("email",this.loginDetails.email);
         formData.append("password",this.loginDetails.password);
         console.log(this.loginDetails.email);
+        console.log(this.loginDetails.password);
         this.service.login(formData).subscribe(data=>{alert("Login successfull");
         this.model=data;
         if (this.model.role=='user') {

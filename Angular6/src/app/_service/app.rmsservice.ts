@@ -21,6 +21,7 @@ export class RmsService{
         console.log("In logout");
         sessionStorage.removeItem("userId");
         sessionStorage.removeItem("userRole");
+        
     }
 
     temp:any;
@@ -45,8 +46,8 @@ export class RmsService{
         return this.myhttp.post('http://localhost:9088/company/addjob?userId='+sessionStorage.getItem("userId"),data);
     }
 
-    searchJob(id:number){
-        return this.myhttp.get('http://localhost:9088/user/searchbyexperience?experience='+id);
+    searchJob(data:any){
+        return this.myhttp.get('http://localhost:9088/user/searchbylocation'+data);
     }
 
     uploadFile(data:any){
