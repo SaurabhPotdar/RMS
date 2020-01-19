@@ -1,0 +1,113 @@
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<div class="site-wrap">
+
+  <div class="site-mobile-menu">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div> <!-- .site-mobile-menu -->
+
+  <div class="site-navbar mt-4">
+    <div class="container py-1">
+      <div class="row align-items-center">
+        <div class="col-6 col-xl-2">
+          <h1 class="mb-0"><a href="/home" class="text-black h2 mb-0">Job<strong>start</strong></a></h1>
+        </div>
+        <div class="col-4 col-md-4 col-lg-8">
+          <nav class="site-navigation text-right text-md-right" role="navigation">
+
+            <div class="d-inline-block d-lg-none ml-md-0 mr-auto py-3"><a href="#"
+                class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+            <ul class="site-menu js-clone-nav d-none d-lg-block">
+              <li><a href="/upload">Upload</a></li>
+              <li><a href="/logout">Logout</a></li>
+            </ul>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="unit-5 overlay" style="background-image: url('assets/images/hero_1.jpg');">
+      <div class="container text-center">
+        <h2 class="mb-0">Search a Job</h2>
+      </div>
+    </div>
+
+    <div style="height: 113px;"></div>
+
+<div class="site-section site-section-sm pb-0">
+  <div class="container">
+    <div class="row">
+      <form class="form-search col-md-12" style="margin-top: -100px;">
+        <div class="row  align-items-end">
+
+          <!-- <div class="col-md-4">
+            <label for="offer-types">Job Title</label>
+            <div class="select-wrap">
+              <span class="icon icon-arrow_drop_down"></span>
+              <select [(ngModel)]="searchByArea" name="offer-types" id="offer-types"
+                class="form-control d-block rounded-0">
+                <option value="Software Developer">Software Developer</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Data Analyst">Data Analyst</option>
+                <option value="3">550+</option>
+              </select>
+            </div>
+          </div> -->
+
+          <div class="col-md-4">
+            <label for="select-city">Select City</label>
+            <div class="select-wrap">
+              <span class="icon icon-arrow_drop_down"></span>
+              <select [(ngModel)]="searchData.location" name="select-city" id="select-city" required
+                class="form-control d-block rounded-0">
+                <option value="Pune">Pune</option>
+                <option value="Hydrebad">Hydrebad</option>
+                <option value="Banglore">Banglore</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <input type="submit" (click)="searchJob()" class="btn btn-success text-white btn-block rounded-0"
+              value="Search">
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<h1>Welcome</h1>
+
+<!-- <div style="height: 113px;"></div> -->
+
+
+
+
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="assets/js/jquery-ui.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/mediaelement-and-player.min.js"></script>
+<script src="assets/js/jquery.stellar.min.js"></script>
+<script src="assets/js/jquery.countdown.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/bootstrap-datepicker.min.js"></script>
+<script src="assets/js/aos.js"></script>
+
+<script src="assets/js/main.js"></script>

@@ -12,6 +12,7 @@ export class UserComponent implements OnInit{
     searchData:any={location:"",designation:""};
 
     jobList:any[] = [];
+    job:any;
 
     ngOnInit(){
 

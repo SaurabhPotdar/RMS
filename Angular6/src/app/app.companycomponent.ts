@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 
 @Component({
     selector: 'companypage',
-    template:``
+    templateUrl:'app.company.html'
 })
 
 export class CompanyComponent implements OnInit{
