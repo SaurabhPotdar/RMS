@@ -4,18 +4,21 @@
 package com.cg.rms.dto;
 
 import java.util.Date;
-import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -57,16 +60,13 @@ public class User {
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="user_id")
 	private List<Qualification> qualification;
-	@OneToMany
-	@JoinColumn(name="job_id")
-	private Map<Integer,Job> appliedJobs = new HashMap<>();
+	@ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@JoinTable(name="user_job", joinColumns = {@JoinColumn(name="user_id")}, inverseJoinColumns = {@JoinColumn(name="job_id")})
+	private Set<Job> jobs = new HashSet<>();
 	@OneToOne
 	@JoinColumn(name="file_id")
 	private DatabaseFile file;
-//	@OneToOne
-//	@JoinColumn(name="file_id")
-	
-	//Designation---------------------------
+
 	
 	@Column(name = "created_date", nullable = false, updatable = false)
 	@CreatedDate
@@ -82,11 +82,12 @@ public class User {
 	@Column(name = "modified_by")
 	@LastModifiedBy
 	private String modifiedBy;
-	
+
+
 	public User(int userId, String firstName, @Email(message = "Enter valid email eg:abc@gmail.com") String email,
 			String password, String position, int experience, String phoneNumber, String role,
-			List<Qualification> qualification, Map<Integer, Job> appliedJobs, DatabaseFile file, Date createdDate,
-			Date modifiedDate, String createdBy, String modifiedBy) {
+			List<Qualification> qualification, Set<Job> jobs, DatabaseFile file, Date createdDate, Date modifiedDate,
+			String createdBy, String modifiedBy) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
@@ -97,7 +98,7 @@ public class User {
 		this.phoneNumber = phoneNumber;
 		this.role = role;
 		this.qualification = qualification;
-		this.appliedJobs = appliedJobs;
+		this.jobs = jobs;
 		this.file = file;
 		this.createdDate = createdDate;
 		this.modifiedDate = modifiedDate;
@@ -119,92 +120,14 @@ public class User {
 
 
 
-	public String getFirstName() {
-		return firstName;
-	}
-
-
-
-	public String getEmail() {
-		return email;
-	}
-
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-
-	public String getPosition() {
-		return position;
-	}
-
-
-
-	public int getExperience() {
-		return experience;
-	}
-
-
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-
-
-	public String getRole() {
-		return role;
-	}
-
-
-
-	public List<Qualification> getQualification() {
-		return qualification;
-	}
-
-
-
-	public Map<Integer, Job> getAppliedJobs() {
-		return appliedJobs;
-	}
-
-
-
-	public DatabaseFile getFile() {
-		return file;
-	}
-
-
-
-	public Date getCreatedDate() {
-		return createdDate;
-	}
-
-
-
-	public Date getModifiedDate() {
-		return modifiedDate;
-	}
-
-
-
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-
-
-	public String getModifiedBy() {
-		return modifiedBy;
-	}
-
-
-
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+
+
+
+	public String getFirstName() {
+		return firstName;
 	}
 
 
@@ -215,8 +138,20 @@ public class User {
 
 
 
+	public String getEmail() {
+		return email;
+	}
+
+
+
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+
+
+	public String getPassword() {
+		return password;
 	}
 
 
@@ -227,8 +162,20 @@ public class User {
 
 
 
+	public String getPosition() {
+		return position;
+	}
+
+
+
 	public void setPosition(String position) {
 		this.position = position;
+	}
+
+
+
+	public int getExperience() {
+		return experience;
 	}
 
 
@@ -239,8 +186,20 @@ public class User {
 
 
 
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+
+
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+
+
+	public String getRole() {
+		return role;
 	}
 
 
@@ -251,14 +210,32 @@ public class User {
 
 
 
+	public List<Qualification> getQualification() {
+		return qualification;
+	}
+
+
+
 	public void setQualification(List<Qualification> qualification) {
 		this.qualification = qualification;
 	}
 
 
 
-	public void setAppliedJobs(Map<Integer, Job> appliedJobs) {
-		this.appliedJobs = appliedJobs;
+	public Set<Job> getJobs() {
+		return jobs;
+	}
+
+
+
+	public void setJobs(Set<Job> jobs) {
+		this.jobs = jobs;
+	}
+
+
+
+	public DatabaseFile getFile() {
+		return file;
 	}
 
 
@@ -269,8 +246,20 @@ public class User {
 
 
 
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+
+
 	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
+	}
+
+
+
+	public Date getModifiedDate() {
+		return modifiedDate;
 	}
 
 
@@ -281,8 +270,20 @@ public class User {
 
 
 
+	public String getCreatedBy() {
+		return createdBy;
+	}
+
+
+
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
+	}
+
+
+
+	public String getModifiedBy() {
+		return modifiedBy;
 	}
 
 
@@ -290,7 +291,9 @@ public class User {
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
-	
+
+
+
 	
 	
 	

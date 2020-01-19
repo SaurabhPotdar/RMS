@@ -4,6 +4,8 @@
 package com.cg.rms.dto;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -49,6 +52,8 @@ public class Job {
 	@ManyToOne
 	@JoinColumn(name="company_id")
 	private Company company;
+	@ManyToMany(mappedBy="jobs")
+	private Set<User> usersApplied = new HashSet<>();
 	
 	@Column(name = "created_date", nullable = false, updatable = false)
 	@CreatedDate
@@ -64,22 +69,8 @@ public class Job {
 	@Column(name = "modified_by")
 	@LastModifiedBy
 	private String modifiedBy;
-
-	public Job(int jobId, String designation, String qualification, int experience, double salary, String location,
-			Company company, Date createdDate, Date modifiedDate, String createdBy, String modifiedBy) {
-		super();
-		this.jobId = jobId;
-		this.designation = designation;
-		this.qualification = qualification;
-		this.experience = experience;
-		this.salary = salary;
-		this.location = location;
-		this.company = company;
-		this.createdDate = createdDate;
-		this.modifiedDate = modifiedDate;
-		this.createdBy = createdBy;
-		this.modifiedBy = modifiedBy;
-	}
+	
+	
 
 	public Job() {
 		super();
@@ -171,6 +162,16 @@ public class Job {
 
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
+	}
+	
+	
+
+	public Set<User> getUsersApplied() {
+		return usersApplied;
+	}
+
+	public void setUsersApplied(Set<User> usersApplied) {
+		this.usersApplied = usersApplied;
 	}
 
 	@Override

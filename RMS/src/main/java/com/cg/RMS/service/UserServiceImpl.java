@@ -6,7 +6,7 @@ package com.cg.rms.service;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 
@@ -60,7 +60,6 @@ public class UserServiceImpl implements UserService {
 		//Converting to uppercase so that there is no problem in finding using Spring Data.
 		String position = user.getPosition().toUpperCase();
 		user.setPosition(position);
-		System.out.println(user);
 		
 		Company tempCompany = companyRepository.findByEmail(user.getEmail());
 		User tempUser = userRepository.findByEmail(user.getEmail());
@@ -74,18 +73,6 @@ public class UserServiceImpl implements UserService {
 		}
 	}
 	
-//	Company tempCompany = companyRepository.findByEmail(company.getEmail());
-//	System.out.println(tempCompany);
-//	User tempUser = userRepository.findByEmail(company.getEmail());
-//	System.out.println(tempUser);
-//	if(tempUser!=null || tempCompany!=null)
-//		throw new RmsException("Email already exists");
-//	else {
-//		companyRepository.save(company);
-//		logger.trace("Registering company");
-//		return true;
-//	}
-
 
 	/**
 	 * 
@@ -143,10 +130,10 @@ public class UserServiceImpl implements UserService {
 		List<Job> newJobList = new ArrayList<>();  //To store all job for which user has not applied yet
 		if(jobList.size()!=0) {
 			User user = searchUser(userId);
-			Map<Integer,Job> appliedJob = user.getAppliedJobs();
+			Set<Job> appliedJob = user.getJobs();
 			for(Job job:jobList) {
 				//Check is user has applied for job, if not add it to list to display to user.
-				if(!appliedJob.containsKey(job.getJobId())) {
+				if(!appliedJob.contains(job)) {
 					newJobList.add(job);  //Return as a list to display to user
 				}
 			}
@@ -196,17 +183,26 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean applyForJob(int userId, int jobId) {
 		User user = searchUser(userId);
-		Job job = searchJobById((int) jobId);
-		Map<Integer,Job> appliedJob = user.getAppliedJobs();
+		Job job = searchJobById(jobId);
+		Set<Job> appliedJob = user.getJobs();
+		Set<User> usersApplied = job.getUsersApplied();
 		//Check is user has already applied for the job
-		if(appliedJob.containsKey(jobId)) {
+		if(appliedJob.contains(job)) {
 			throw new RmsException("Already applied for this job");
 		}
 		//If not, add it to the map.
 		//This map is used so when we display jobs to the user, we dont show job he/she has already applied for.
-		appliedJob.put(jobId, job);
-		user.setAppliedJobs(appliedJob);
-		userRepository.save(user);
+		
+		appliedJob.add(job);
+		user.setJobs(appliedJob);  //Update user list
+		usersApplied.add(user);
+		job.setUsersApplied(usersApplied);  //Update job list
+		userRepository.save(user);  //Save user. (User cascades job)
+		
+//		usersApplied.put(userId, user);
+//		job.setUsersApplied(usersApplied);  //Update job list
+//		jobRepository.save(job);
+		
 		logger.trace("Applying for job in service");
 		return true;	
 	}

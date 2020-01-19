@@ -60,11 +60,9 @@ public class Company {
 	@Column(name = "modified_by")
 	@LastModifiedBy
 	private String modifiedBy;
-	
-	
 
 	public Company(int companyId, @Email(message = "Enter valid email eg:abc@gmail.com") String email, String password,
-			String companyName, String companyAddress, List<Job> jobs, Date createdDate, Date modifiedDate,
+			String companyName, String companyAddress, List<Job> jobs, String role, Date createdDate, Date modifiedDate,
 			String createdBy, String modifiedBy) {
 		super();
 		this.companyId = companyId;
@@ -73,11 +71,11 @@ public class Company {
 		this.companyName = companyName;
 		this.companyAddress = companyAddress;
 		this.jobs = jobs;
+		this.role = role;
 		this.createdDate = createdDate;
 		this.modifiedDate = modifiedDate;
 		this.createdBy = createdBy;
 		this.modifiedBy = modifiedBy;
-		this.role="company";
 	}
 
 	public Company() {
@@ -163,6 +161,7 @@ public class Company {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 
 	@Override
 	public String toString() {

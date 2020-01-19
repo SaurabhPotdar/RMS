@@ -42,7 +42,6 @@ public class AdminController {
 	 */
 	@PostMapping(value="/login")
 	public ResponseEntity<?> login(@RequestParam("email") String email, @RequestParam("password") String password) {
-		System.out.println("In login");
 		try {
 			logger.trace("Checking if credentials are valid");
 			Object object = companyService.login(email, password);
