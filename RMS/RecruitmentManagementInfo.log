@@ -1136,3 +1136,18 @@ Caused by: java.lang.ClassNotFoundException: Set
 2020-01-19 13:47:34,599 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] File added to database
 2020-01-19 13:48:31,126 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] User found with Id: 1
 2020-01-19 13:48:31,127 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] File added to database
+2020-01-19 13:49:58,962 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 1
+2020-01-19 13:49:58,963 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] File added to database
+2020-01-19 13:50:15,238 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-2] Checking if credentials are valid
+2020-01-19 13:50:25,357 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 2
+2020-01-19 13:50:25,357 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] File added to database
+2020-01-19 13:51:18,681 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 10088 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-19 13:51:18,682 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-19 13:51:18,682 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-19 13:51:19,302 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.643 seconds (JVM running for 7170.733)
+2020-01-19 13:51:42,203 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 10088 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-19 13:51:42,203 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-19 13:51:42,203 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-19 13:51:42,801 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.619 seconds (JVM running for 7194.232)
+2020-01-19 13:51:56,517 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
+2020-01-19 13:51:56,525 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] File added to database

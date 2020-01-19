@@ -225,7 +225,6 @@ public class UserServiceImpl implements UserService {
             DatabaseFile dbFile = new DatabaseFile(fileName, file.getContentType(), file.getBytes());
 
             User user = searchUser(userId);
-            System.out.println(user);
             user.setFile(dbFile);
             userRepository.save(user);
             dbFileRepository.save(dbFile);

@@ -150,10 +150,8 @@ public class UserController {
 	 */
 	@PostMapping("/uploadFile")
     public Response uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("userId") int userId) {
-		System.out.println("In controller 1");
-    	DatabaseFile fileName = userService.storeFile(file,userId);
-    	System.out.println("In controller 2");
-        String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+		DatabaseFile fileName = userService.storeFile(file,userId);
+    	String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
                 .path("/downloadFile/")
                 .path(fileName.getFileName())
                 .toUriString();
