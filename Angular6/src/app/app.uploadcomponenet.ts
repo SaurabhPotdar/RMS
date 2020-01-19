@@ -37,6 +37,7 @@ export class UploadComponent  {
           this.sMsg = data as string;
           console.log (this.sMsg);
           alert("Uploaded successfully");
+          location.reload();
         }
         ,
         (err: HttpErrorResponse) => {

@@ -1131,3 +1131,8 @@ Caused by: java.lang.ClassNotFoundException: Set
 2020-01-19 13:28:45,161 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 2
 2020-01-19 13:28:45,163 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] Job found with Id: 1
 2020-01-19 13:28:45,167 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-5] Error in applyForJob in User Controller
+2020-01-19 13:41:26,221 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-6] Checking if credentials are valid
+2020-01-19 13:47:34,596 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] User found with Id: 1
+2020-01-19 13:47:34,599 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] File added to database
+2020-01-19 13:48:31,126 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] User found with Id: 1
+2020-01-19 13:48:31,127 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] File added to database
