@@ -204,3 +204,34 @@ java.lang.Error: Unresolved compilation problem:
 2020-01-21 15:19:30,882 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] Updated job list in service
 2020-01-21 15:19:30,888 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] Saved user in service
 2020-01-21 15:19:30,890 TRACE com.cg.rms.controller.UserController [http-nio-9088-exec-1] User: 2 successfully applied for job: 2
+2020-01-21 15:23:17,659 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 2
+2020-01-21 15:23:20,069 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 2
+2020-01-21 15:23:21,600 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 2
+2020-01-21 15:23:21,602 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] Job found with Id: 1
+2020-01-21 15:23:21,604 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] Updated user list in service
+2020-01-21 15:23:21,605 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] Updated job list in service
+2020-01-21 15:23:21,605 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] Saved user in service
+2020-01-21 15:23:21,607 TRACE com.cg.rms.controller.UserController [http-nio-9088-exec-5] User: 2 successfully applied for job: 1
+2020-01-21 15:24:32,576 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 14788 (C:\Users\saurpotd\Documents\GitHub\RMS\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\RMS\RMS)
+2020-01-21 15:24:32,577 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-21 15:24:32,577 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-21 15:24:34,782 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.288 seconds (JVM running for 12391.416)
+2020-01-21 15:24:53,613 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 14788 (C:\Users\saurpotd\Documents\GitHub\RMS\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\RMS\RMS)
+2020-01-21 15:24:53,613 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-21 15:24:53,613 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-21 15:24:56,600 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 3.056 seconds (JVM running for 12413.223)
+2020-01-21 15:24:58,217 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
+2020-01-21 15:24:59,896 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 2
+2020-01-21 15:24:59,898 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] Job found with Id: 3
+2020-01-21 15:24:59,903 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] Updated user list in service
+2020-01-21 15:24:59,905 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] Updated job list in service
+2020-01-21 15:24:59,913 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] Saved user in service
+2020-01-21 15:24:59,916 TRACE com.cg.rms.controller.UserController [http-nio-9088-exec-2] User: 2 successfully applied for job: 3
+2020-01-21 15:25:49,441 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 14788 (C:\Users\saurpotd\Documents\GitHub\RMS\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\RMS\RMS)
+2020-01-21 15:25:49,442 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-21 15:25:49,442 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-21 15:25:51,726 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.36 seconds (JVM running for 12468.348)
+2020-01-21 15:26:06,412 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 14788 (C:\Users\saurpotd\Documents\GitHub\RMS\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\RMS\RMS)
+2020-01-21 15:26:06,413 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-21 15:26:06,413 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-21 15:26:08,823 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.48 seconds (JVM running for 12485.445)

@@ -136,7 +136,7 @@ public class UserController {
 		try {
 			userService.applyForJob(userId, jobId);
 			logger.trace("User: "+userId+" successfully applied for job: "+jobId);
-			return new ResponseEntity<String>("Successfull",HttpStatus.OK);
+			return new ResponseEntity<>(HttpStatus.OK);  //Getting JSON parse error, when i tried to return string, so just returnning status code.
 			//return new ResponseEntity<String>("User: "+userId+" successfully applied for job: "+jobId,HttpStatus.OK);
 		}
 		catch (Exception exception) {
