@@ -35,10 +35,13 @@ export class UserComponent implements OnInit{
         // formData.append("userId",sessionStorage.getItem("userId"));
         // console.log(this.searchData.location);
         // this.service.searchJob(formData).subscribe((data:any[])=>this.jobList=data,error=>alert(error.error));
+        //Size and show in the subscribe code as it is an asynchronous operation.
+        //If we write size after the asynchronous operation then it runs before list is fetched.
+        //For debugging write console.log(jobList) also in async. 
         this.service.searchJob(this.searchData.location).subscribe((data:any[])=>{this.jobList=data;
         this.size=this.jobList.length;
         this.show=true;},error=>{alert(error.error);
-        location.reload()});
+        this.show=false});
     }
 
 }
