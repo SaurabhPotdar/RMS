@@ -85,29 +85,40 @@
     </header>
     <!-- Header Area End -->
 
+
+    <!-- <mat-form-field>
+        <mat-label>Cars</mat-label>
+        <select matNativeControl required>
+          <option value="volvo">Volvo</option>
+          <option value="saab">Saab</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="audi">Audi</option>
+        </select>
+      </mat-form-field> -->
+      
+
     <!-- Search Area Starts -->
     <div class="search-area">
         <div class="search-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
                         <form action="#" class="d-md-flex justify-content-between">
-                            <!-- <select name="Designation" [(ngModel)]="searchData.designation" required>
+                            <!-- <label for="Designation">Designation: </label>
+                            <select name="Designation" [(ngModel)]="searchData.designation" required>
                                 <option value="Software Developer">Software Developer</option>
                                 <option value="Web Developer">Web Developer</option>
                                 <option value="Data Analyst">Data Analyst</option>
                                 <option value="Data Scientist">Data Scientist</option>
                             </select> -->
+                            <label for="Location">Location</label>
                             <select name="Location" [(ngModel)]="searchData.location" required>
-                                <!-- <option value="1">All Location</option> -->
                                 <option value="Pune">Pune</option>
                                 <option value="Banglore">Banglore</option>
                                 <option value="Mumbai">Mumbai</option>
                                 <option value="Hydrebad">Hydrebad</option>
                             </select>
                             <button type="submit" (click)="searchJob()" class="template-btn">find job</button>
-                            <!-- <button (click)="registerUser()" [disabled]="f.form.invalid" class="btn btn--radius-2 btn--blue"
-                  type="submit">Find a job</button> -->
                         </form>
                     </div>
                 </div>
@@ -127,22 +138,21 @@
     <!-- Jobs Area Starts -->
     <section class="jobs-area section-padding">
         <div *ngIf="show">
-            Welcome back, friend.
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
+                        
                             <table>
-                                <tr *ngFor='let job of jobList'>
                                 <div class="single-job mb-4 d-lg-flex justify-content-between">
+                                <tr *ngFor='let job of jobList'>
                                     <div class="job-text">
-                                        <h4>Location</h4>
+                                        <h4>{{job.location}}</h4>
                                         <ul class="mt-4">
                                             <li class="mb-3">
                                                 <h5><i class="fa fa-map-marker"></i></h5>
                                             </li>
                                             <li class="mb-3">
-                                                <h5><i class="fa fa-pie-chart"></i> {{job.location}}
-                                                    Engineering / Chemistry</h5>
+                                                <h5><i class="fa fa-pie-chart"></i> {{job.designation}}</h5>
                                             </li>
                                             <li>
                                                 <h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5>
@@ -156,8 +166,8 @@
                                         <a href="#" class="third-btn job-btn1">full time</a>
                                         <a href="#" class="third-btn">apply</a>
                                     </div>
-                                </div>
                             </tr>
+                        </div>
                             </table>
                     </div>
                 </div>
