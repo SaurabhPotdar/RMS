@@ -178,7 +178,7 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	/**
-	 * Description: We check if user has already applied for job, if not we add it to Map of appliedJob
+	 * Description: We check if user has already applied for job, if not we add it to Set of appliedJob
 	 */
 	@Override
 	public boolean applyForJob(int userId, int jobId) {
@@ -190,13 +190,17 @@ public class UserServiceImpl implements UserService {
 		if(appliedJob.contains(job)) {
 			throw new RmsException("Already applied for this job");
 		}
-		//If not, add it to the map.
-		//This map is used so when we display jobs to the user, we dont show job he/she has already applied for.
+		//If not, add it to the set.
+		//This set is used so when we display jobs to the user, we don't show jobs he/she has already applied for.
 		
+		//Update user list
 		appliedJob.add(job);
-		user.setJobs(appliedJob);  //Update user list
+		user.setJobs(appliedJob); 
+		
+		//Update job list
 		usersApplied.add(user);
-		job.setUsersApplied(usersApplied);  //Update job list
+		job.setUsersApplied(usersApplied);
+		
 		userRepository.save(user);  //Save user. (User cascades job)
 		
 //		usersApplied.put(userId, user);

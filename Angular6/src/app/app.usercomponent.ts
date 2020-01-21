@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {RmsService} from './_service/app.rmsservice'
 import { Router } from '@angular/router'
+import { Job } from './_model/app.job';
 
 @Component({
     selector: 'userpage',
@@ -12,7 +13,9 @@ export class UserComponent implements OnInit{
     searchData:any={location:"",designation:""};
 
     jobList:any[] = [];
-    job:any;
+    //job:any;
+
+    show:boolean=false;
 
     ngOnInit(){
 
@@ -25,11 +28,14 @@ export class UserComponent implements OnInit{
     constructor(private service:RmsService, private router:Router){}
     
     searchJob(){
-        const formData = new FormData();
-        formData.append("location",this.searchData.location);
-        formData.append("userId",sessionStorage.getItem("userId"));
-        console.log(this.searchData.location);
-        this.service.searchJob(formData).subscribe((data:any[])=>this.jobList=data,error=>alert(error.error));
+        // const formData = new FormData();
+        // formData.append("location",this.searchData.location);
+        // formData.append("userId",sessionStorage.getItem("userId"));
+        // console.log(this.searchData.location);
+        // this.service.searchJob(formData).subscribe((data:any[])=>this.jobList=data,error=>alert(error.error));
+        this.service.searchJob(this.searchData.location).subscribe((data:any[])=>this.jobList=data,error=>alert(error.error));
+        console.log(this.jobList);
+        this.show=true;
     }
 
 }

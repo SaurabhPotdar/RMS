@@ -109,14 +109,17 @@ public class UserController {
 	/**
 	 * 
 	 * @param location
+	 * @param userId - Is used to only display those job for which current user has not applied yet.
 	 * @return
 	 */
 	@GetMapping(value="/searchbylocation")
 	public ResponseEntity<?> searchByLocation(@RequestParam("location") String location, @RequestParam("userId") int userId) {
+		System.out.println(location+" "+userId);
 		try {
 			//Converting it to uppercase to avoid problems while searching with Spring Data
 			location = location.toUpperCase();
 			List<Job> jobList = userService.searchJobByLocation(location,userId);
+			System.out.println(jobList.size());
 			return new ResponseEntity<List<Job>>(jobList,HttpStatus.OK);
 		}
 		catch(Exception exception) {

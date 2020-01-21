@@ -47,7 +47,9 @@ export class RmsService{
     }
 
     searchJob(data:any){
-        return this.myhttp.get('http://localhost:9088/user/searchbylocation'+data);
+        // return this.myhttp.get('http://localhost:9088/user/searchbylocation'+data);
+        return this.myhttp.get('http://localhost:9088/user/searchbylocation?userId='+sessionStorage.getItem("userId")+'&location='+data);
+        //http://localhost:9088/user/searchbylocation?userId=2&location=Pune
     }
 
     uploadFile(data:any){
