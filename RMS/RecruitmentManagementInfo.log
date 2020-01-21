@@ -241,3 +241,19 @@ java.lang.Error: Unresolved compilation problem:
 2020-01-21 16:55:16,576 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
 2020-01-21 16:55:35,701 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 19.649 seconds (JVM running for 21.838)
 2020-01-21 16:55:47,748 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
+2020-01-21 17:34:54,926 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] No jobs found
+2020-01-21 17:34:54,930 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-3] Exception in company/searchbylocation
+2020-01-21 17:34:58,703 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 2
+2020-01-21 17:35:43,751 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 2
+2020-01-21 17:37:54,895 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-7] User found with Id: 2
+2020-01-21 17:40:09,433 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] User found with Id: 2
+2020-01-21 17:40:41,512 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] User found with Id: 2
+2020-01-21 17:41:03,592 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
+2020-01-21 17:43:12,972 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 2
+2020-01-21 17:43:39,569 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 2
+2020-01-21 17:43:56,492 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 2
+2020-01-21 17:44:45,125 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] User found with Id: 2
+2020-01-21 17:44:57,034 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-7] No jobs found
+2020-01-21 17:44:57,035 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-7] Exception in company/searchbylocation
+2020-01-21 17:45:00,722 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] User found with Id: 2
+2020-01-21 17:45:27,146 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] User found with Id: 2
