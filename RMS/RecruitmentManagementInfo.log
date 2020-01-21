@@ -235,3 +235,9 @@ java.lang.Error: Unresolved compilation problem:
 2020-01-21 15:26:06,413 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
 2020-01-21 15:26:06,413 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
 2020-01-21 15:26:08,823 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.48 seconds (JVM running for 12485.445)
+2020-01-21 15:31:56,376 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
+2020-01-21 16:55:16,576 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 43068 (C:\Users\saurpotd\Documents\GitHub\RMS\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\RMS\RMS)
+2020-01-21 16:55:16,576 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-21 16:55:16,576 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-21 16:55:35,701 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 19.649 seconds (JVM running for 21.838)
+2020-01-21 16:55:47,748 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
