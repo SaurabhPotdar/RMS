@@ -17,6 +17,8 @@ export class UserComponent implements OnInit{
 
     show:boolean=false;
 
+    size:number=0;
+
     ngOnInit(){
 
         if(!(sessionStorage.getItem('userRole') === "user")){
@@ -33,9 +35,10 @@ export class UserComponent implements OnInit{
         // formData.append("userId",sessionStorage.getItem("userId"));
         // console.log(this.searchData.location);
         // this.service.searchJob(formData).subscribe((data:any[])=>this.jobList=data,error=>alert(error.error));
-        this.service.searchJob(this.searchData.location).subscribe((data:any[])=>this.jobList=data,error=>alert(error.error));
-        console.log(this.jobList);
-        this.show=true;
+        this.service.searchJob(this.searchData.location).subscribe((data:any[])=>{this.jobList=data;
+        this.size=this.jobList.length;
+        this.show=true;},error=>{alert(error.error);
+        location.reload()});
     }
 
 }

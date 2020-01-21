@@ -5358,3 +5358,14 @@ java.lang.StackOverflowError: null
 2020-01-21 14:34:26,110 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
 2020-01-21 14:38:36,838 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 2
 2020-01-21 14:38:57,054 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] User found with Id: 2
+2020-01-21 14:43:10,272 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 2
+2020-01-21 14:43:10,316 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] User found with Id: 2
+2020-01-21 14:43:15,819 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] User found with Id: 2
+2020-01-21 14:43:25,210 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] No jobs found
+2020-01-21 14:43:25,324 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-10] Exception in company/searchbylocation
+2020-01-21 14:45:53,564 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
+2020-01-21 14:46:03,945 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 2
+2020-01-21 14:47:26,689 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 2
+2020-01-21 14:47:31,312 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] User found with Id: 2
+2020-01-21 14:47:36,004 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-7] No jobs found
+2020-01-21 14:47:36,005 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-7] Exception in company/searchbylocation
