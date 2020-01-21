@@ -177,11 +177,11 @@
                 <th>Job Id</th>
                 <th>Location</th>
             </tr>
-            <tr *ngFor="let job of jobList;">
+            <tr *ngFor="let job of jobList; let i = index">
                 <td>{{job.jobId}}</td>
                 <td>{{job.location}}</td>
                 <td>
-                    <button type="button" >Apply</button>
+                    <button type="button" (click)="applyJob(jobList[i].jobId)">Apply</button>
                 </td>
             </tr>
         </table>

@@ -56,5 +56,9 @@ export class RmsService{
         return this.myhttp.post('http://localhost:9088/user/uploadFile',data);
     }
 
+    applyJob(data:any){
+        return this.myhttp.get('http://localhost:9088/user/applyforjob?jobId='+data+'&userId='+sessionStorage.getItem("userId"));
+    }
+
 
 }

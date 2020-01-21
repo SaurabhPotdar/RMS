@@ -17,7 +17,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -114,12 +113,10 @@ public class UserController {
 	 */
 	@GetMapping(value="/searchbylocation")
 	public ResponseEntity<?> searchByLocation(@RequestParam("location") String location, @RequestParam("userId") int userId) {
-		System.out.println(location+" "+userId);
 		try {
 			//Converting it to uppercase to avoid problems while searching with Spring Data
 			location = location.toUpperCase();
 			List<Job> jobList = userService.searchJobByLocation(location,userId);
-			System.out.println(jobList.size());
 			return new ResponseEntity<List<Job>>(jobList,HttpStatus.OK);
 		}
 		catch(Exception exception) {
@@ -133,12 +130,14 @@ public class UserController {
 	 * @param jobId
 	 * @return
 	 */
-	@PutMapping(value="/applyforjob")
+	@GetMapping(value="/applyforjob")
 	public ResponseEntity<?> applyForJob(@RequestParam("jobId") int jobId, @RequestParam("userId") int userId){
+		System.out.println(jobId+" "+userId);
 		try {
 			userService.applyForJob(userId, jobId);
 			logger.trace("User: "+userId+" successfully applied for job: "+jobId);
-			return new ResponseEntity<String>("User: "+userId+" successfully applied for job: "+jobId,HttpStatus.OK);
+			return new ResponseEntity<String>("Successfull",HttpStatus.OK);
+			//return new ResponseEntity<String>("User: "+userId+" successfully applied for job: "+jobId,HttpStatus.OK);
 		}
 		catch (Exception exception) {
 			logger.error("Error in applyForJob in User Controller");

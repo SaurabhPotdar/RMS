@@ -195,19 +195,18 @@ public class UserServiceImpl implements UserService {
 		
 		//Update user list
 		appliedJob.add(job);
-		user.setJobs(appliedJob); 
+		user.setJobs(appliedJob);
+		logger.trace("Updated user list in service");
 		
 		//Update job list
 		usersApplied.add(user);
 		job.setUsersApplied(usersApplied);
+		logger.trace("Updated job list in service");
 		
 		userRepository.save(user);  //Save user. (User cascades job)
+		logger.trace("Saved user in service");
 		
-//		usersApplied.put(userId, user);
-//		job.setUsersApplied(usersApplied);  //Update job list
-//		jobRepository.save(job);
 		
-		logger.trace("Applying for job in service");
 		return true;	
 	}
 	
