@@ -38,16 +38,22 @@ public class Job {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="job_id")
 	private int jobId;
+	
 	@Column(name="designation")
 	private String designation;
+	
 	@Column(name="qualification")
 	private String qualification;
+	
 	@Column(name="minimum_experience")
 	private int experience;
+	
 	@Column(name="salary")
 	private double salary;
+	
 	@Column(name="location")
 	private String location;
+	
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="company_id")
@@ -55,6 +61,9 @@ public class Job {
 	@JsonIgnore
 	@ManyToMany(mappedBy="jobs")
 	private Set<User> usersApplied = new HashSet<>();
+	
+	@Column(name="company_name")
+	private String companyName="";
 	
 	@Column(name = "created_date", nullable = false, updatable = false)
 	@CreatedDate
@@ -173,6 +182,14 @@ public class Job {
 
 	public void setUsersApplied(Set<User> usersApplied) {
 		this.usersApplied = usersApplied;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
 	@Override

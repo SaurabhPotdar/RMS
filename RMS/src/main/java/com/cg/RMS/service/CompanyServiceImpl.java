@@ -63,6 +63,7 @@ public class CompanyServiceImpl implements CompanyService{
 			job.setLocation(job.getLocation().toUpperCase());
 			job.setDesignation(job.getDesignation().toUpperCase());
 			job.setCompany(company);
+			job.setCompanyName(company.getCompanyName());
 			List<Job> jobList = company.getJobs();
 			jobList.add(job);
 			companyRepository.save(company);
@@ -70,7 +71,6 @@ public class CompanyServiceImpl implements CompanyService{
 			return true;
 		}
 		else {
-			System.out.println("4");
 			logger.error("Company not found with id: "+userId);
 			throw new RmsException("Company not found");
 		}
