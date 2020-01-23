@@ -1,0 +1,6 @@
+//Pagination in angular
+https://www.npmjs.com/package/ngx-pagination
+
+//Dynamic href
+//Used to redirect to appropriate page based on role.
+https://stackoverflow.com/questions/37948504/set-href-in-attribute-directive-in-angular
