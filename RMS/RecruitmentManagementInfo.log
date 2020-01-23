@@ -2474,3 +2474,4 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 2020-01-23 20:05:58,063 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 1
 2020-01-23 20:06:01,279 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] No jobs found
 2020-01-23 20:06:01,280 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-4] Exception in company/searchbylocation
+2020-01-23 20:17:25,278 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-5] Checking if credentials are valid
