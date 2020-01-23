@@ -169,7 +169,7 @@
                 <div class="row">
                     <div class="col-lg-12">
 
-                        <div *ngFor='let job of jobList'>
+                        <div *ngFor="let job of jobList ; let i = index">
                             <div class="single-job mb-4 d-lg-flex justify-content-between">
                                 <div class="job-text">
                                         <h4>{{job.designation}}</h4>
