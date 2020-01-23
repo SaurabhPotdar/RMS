@@ -2122,3 +2122,11 @@ java.lang.StackOverflowError: null
 2020-01-23 16:14:54,576 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 2
 2020-01-23 16:21:59,808 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 2
 2020-01-23 16:22:09,408 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 2
+2020-01-23 16:23:59,669 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-7] User found with Id: 2
+2020-01-23 16:26:06,248 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] User found with Id: 2
+2020-01-23 16:26:13,066 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] User found with Id: 2
+2020-01-23 16:26:13,068 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] Job found with Id: 4
+2020-01-23 16:26:13,069 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] Updated user list in service
+2020-01-23 16:26:13,093 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] Updated job list in service
+2020-01-23 16:26:13,108 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] Saved user in service
+2020-01-23 16:26:13,186 TRACE com.cg.rms.controller.UserController [http-nio-9088-exec-10] User: 2 successfully applied for job: 4
