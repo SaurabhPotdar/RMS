@@ -32,17 +32,14 @@
       <div class="row align-items-center">
 
         <div class="col-6 col-xl-2">
-          <h1 class="mb-0"><a href="/home" class="text-black h2 mb-0">Job<strong>start</strong></a></h1>
+          <h1 class="mb-0"><a href="/home" class="text-black h2 mb-0">Com<strong>port</strong></a></h1>
         </div>
 
         <div class="col-10 col-xl-10 d-none d-xl-block">
           <nav class="site-navigation text-right" role="navigation">
 
             <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-              <li class="active"><a href="/home">Home</a></li>
-              <li><a href="/blog">Blog</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li class="active"><a href="/logout">Logout</a></li>
               <!-- <li><a href="new-post.html"><span class="rounded bg-primary py-2 px-3 text-white"><span class="h5 mr-2">+</span> Post a Job</span></a></li> -->
             </ul>
           </nav>
@@ -112,6 +109,17 @@
                   ></textarea>
                 </div>
               </div> -->
+
+              <div class="row form-group">
+                <div class="input-group">
+                  <label class="label">Description</label>
+                  <div class="col-md-12 mb-3 mb-md-0">
+                    <textarea name="" class="form-control" id="" cols="30" rows="5" type="text"
+                    [ngClass]="{'is-invalid':f.submitted && location.invalid }"
+                    required></textarea>
+                  </div>
+                </div>
+              </div>
 
               <div class="p-t-15">
                 <button (click)="addJob()" [disabled]="f.form.invalid" class="btn btn--radius-2 btn--blue"
