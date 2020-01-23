@@ -24,6 +24,8 @@ import { UserComponent } from './app.usercomponent';
 import { LogoutComponent } from './app.logoutcomponent';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { BlogSingleComponent } from './app.blogsinglecomponent';
+import { ContactComponent } from './app.contactcomponent';
+import { PricingComponent } from './app.pricing';
 
 //{path: 'show/:text', component: ShowComponent},
 const myroutes:Routes= [
@@ -46,6 +48,8 @@ const myroutes:Routes= [
     { path: 'forbidden', component:Error403Component},
     { path: 'logout', component:LogoutComponent},
     { path: 'blog-single', component:BlogSingleComponent},
+    { path: 'contact', component:ContactComponent},
+    { path: 'pricing', component:PricingComponent},
     { path: '**', component:Error404Component}
 ];
 
@@ -77,7 +81,9 @@ const myroutes:Routes= [
         CompanyComponent,
         UserComponent,
         LogoutComponent,
-        BlogSingleComponent
+        BlogSingleComponent,
+        ContactComponent,
+        PricingComponent
         ],
     providers: [ ],
     bootstrap: [AppComponent]
