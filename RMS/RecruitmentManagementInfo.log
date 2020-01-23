@@ -2264,3 +2264,5 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 2020-01-23 16:52:32,496 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
 2020-01-23 16:52:32,496 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
 2020-01-23 16:52:34,542 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.105 seconds (JVM running for 5309.657)
+2020-01-23 16:54:21,175 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
+2020-01-23 16:54:25,705 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 2
