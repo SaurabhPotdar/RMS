@@ -90,7 +90,6 @@ public class UserController {
 	
 	@GetMapping(value="/search")
 	public ResponseEntity<?> searchJob(@RequestParam("location") String location, @RequestParam("designation") String designation, @RequestParam("userId") int userId){
-		System.out.println(location+" "+designation);
 		try {
 			//Return all jobs
 			if(location.equalsIgnoreCase("All") && designation.equalsIgnoreCase("All")) {

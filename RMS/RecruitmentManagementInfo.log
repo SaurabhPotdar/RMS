@@ -2478,3 +2478,17 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 2020-01-23 22:35:06,052 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-7] Checking if credentials are valid
 2020-01-23 22:36:22,098 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] User found with Id: 1
 2020-01-23 22:36:22,114 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] File added to database
+2020-01-23 22:38:05,767 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 4636 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-23 22:38:05,767 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-23 22:38:05,767 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-23 22:38:06,419 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.676 seconds (JVM running for 12781.968)
+2020-01-23 22:38:58,403 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 4636 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-23 22:38:58,403 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-23 22:38:58,403 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-23 22:38:58,966 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.585 seconds (JVM running for 12834.514)
+2020-01-23 22:39:25,738 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 4636 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-23 22:39:25,739 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-23 22:39:25,739 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-23 22:39:26,323 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.603 seconds (JVM running for 12861.87)
+2020-01-23 22:40:47,975 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] Registering user in service
+2020-01-23 22:40:47,976 TRACE com.cg.rms.controller.UserController [http-nio-9088-exec-2] Registering company
