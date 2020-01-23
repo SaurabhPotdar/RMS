@@ -15,7 +15,7 @@ import { RegisterUserComponent } from './app.registerusercomponent';
 import { JobComponent } from './app.jobcomponent';
 import { SearchJobComponent } from './app.searchjobcomponent';
 import { UploadComponent } from './app.uploadcomponenet';
-import { Error404Component } from './app.errorcomponent';
+import { Error404Component } from './app.error404component';
 import { LoginComponent } from './app.logincomponent';
 import { BlogComponent } from './app.blogcomponent';
 import { CompanyComponent } from './app.companycomponent';
