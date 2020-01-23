@@ -18,7 +18,7 @@ export class RegisterCompanyComponent  {
 
     registerCompany():any{
         this.service.registerCompany(this.model).subscribe(data=>{alert("Registered Successfully");
-        this.router.navigate(['home']);}
+        this.router.navigate(['login']);}
         ,error=>alert(error.error));
     }
     

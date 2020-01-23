@@ -7,6 +7,7 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 import com.cg.rms.dto.Company;
@@ -116,15 +117,15 @@ public class CompanyServiceImpl implements CompanyService{
 	}
 
 	@Override
-	public Object login(String email, String password) {
+	public Object login(String email, String unencryptedPassword) {
 		User user = userRepository.findByEmail(email);
 		if(user!=null) {
-			if(user.getPassword().equals(password))
+			if(user.getPassword().equals(unencryptedPassword))
 				return new Login("user",user.getUserId());
 		}
 		Company company = companyRepository.findByEmail(email);
 		if(company!=null) {
-			if(company.getPassword().equals(password))
+			if(company.getPassword().equals(unencryptedPassword))
 				return new Login("company",company.getCompanyId());
 		}
 		throw new RmsException("Invalid credentials");

@@ -15,7 +15,7 @@ export class RegisterUserComponent{
     registerUser():any{
         console.log(this.user.position);
         this.service.registerUser(this.user).subscribe(data=>{alert("Registered Successfully");
-        this.router.navigate(['home']);}
+        this.router.navigate(['login']);}
         ,error=>alert(error.error));
     }
 
