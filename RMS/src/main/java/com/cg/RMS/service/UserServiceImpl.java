@@ -90,8 +90,9 @@ public class UserServiceImpl implements UserService {
 	 */
 	@Override
 	public List<Job> searchJobByDesignation(String designation, int userId) {
-		List<Job> jobList = jobRepository.findByDesignation(designation);
-		List<Job> newJobList = new ArrayList<>();  //To store all job for which user has not applied yet
+		List<Job> jobList = jobRepository.findByDesignation(designation);  //Contains all jobs based on search parameter.
+		List<Job> newJobList = new ArrayList<>();  //To store all job for which user has not applied yet.
+		//Iterate over jobList and check if user has already applied for a job, if not add it to newJobList.
 		if(jobList.size()!=0) {
 			User user = searchUser(userId);
 			Set<Job> appliedJob = user.getJobs();
@@ -109,8 +110,55 @@ public class UserServiceImpl implements UserService {
 		}
 		
 	}
+	
+	@Override
+	public List<Job> searchJobByLocationAndDesignation(String location, String designation, int userId){
+		List<Job> jobList = jobRepository.findByLocationAndDesignation(location, designation);  //Contains all jobs based on search parameter.
+		List<Job> newJobList = new ArrayList<>();  //To store all job for which user has not applied yet.
+		//Iterate over jobList and check if user has already applied for a job, if not add it to newJobList.
+		if(jobList.size()!=0) {
+			User user = searchUser(userId);
+			Set<Job> appliedJob = user.getJobs();
+			for(Job job:jobList) {
+				//Check is user has applied for job, if not add it to list to display to user.
+				if(!appliedJob.contains(job)) {
+					newJobList.add(job);  //Return as a list to display to user
+				}
+			}
+			return newJobList;
+		}
+		else {
+			logger.error("No jobs found");
+			throw new RmsException("No jobs found");
+		}
+	}
 
 
+	/**
+	 * Used to get when user does not specify any designation or location.
+	 */
+	@Override
+	public List<Job> searchJob(int userId){
+		List<Job> jobList = jobRepository.findAll();  //Contains all jobs based on search parameter.
+		List<Job> newJobList = new ArrayList<>();  //To store all job for which user has not applied yet.
+		//Iterate over jobList and check if user has already applied for a job, if not add it to newJobList.
+		if(jobList.size()!=0) {
+			User user = searchUser(userId);
+			Set<Job> appliedJob = user.getJobs();
+			for(Job job:jobList) {
+				//Check is user has applied for job, if not add it to list to display to user.
+				if(!appliedJob.contains(job)) {
+					newJobList.add(job);  //Return as a list to display to user
+				}
+			}
+			return newJobList;
+		}
+		else {
+			logger.error("No jobs found");
+			throw new RmsException("No jobs found");
+		}
+	}
+	
 
 	/**
 	 * 

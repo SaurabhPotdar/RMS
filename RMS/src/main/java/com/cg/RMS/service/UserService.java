@@ -39,4 +39,8 @@ public interface UserService {
 
 	public List<Job> searchJobByLocation(String location, int userId);
 
+	public List<Job> searchJobByLocationAndDesignation(String location, String designation, int userId);
+
+	public List<Job> searchJob(int userId);
+
 }

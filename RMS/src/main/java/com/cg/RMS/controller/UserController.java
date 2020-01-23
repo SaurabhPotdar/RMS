@@ -88,6 +88,35 @@ public class UserController {
 		}
 	}
 	
+	@GetMapping(value="/search")
+	public ResponseEntity<?> searchJob(@RequestParam("location") String location, @RequestParam("designation") String designation, @RequestParam("userId") int userId){
+		System.out.println(location+" "+designation);
+		try {
+			//Return all jobs
+			if(location.equalsIgnoreCase("All") && designation.equalsIgnoreCase("All")) {
+				return new ResponseEntity<List<Job>>(userService.searchJob(userId), HttpStatus.OK);
+			}
+			//Return jobs based on given designation.
+			else if(location.equalsIgnoreCase("All")) {
+				//Converting designation to uppercase while searching to avoid problems while searching with Spring Data
+				return new ResponseEntity<List<Job>>(userService.searchJobByDesignation(designation.toUpperCase(), userId), HttpStatus.OK);
+			}
+			//Return jobs based on given location.
+			else if(designation.equalsIgnoreCase("All")){
+				//Converting location to uppercase while searching to avoid problems while searching with Spring Data
+				return new ResponseEntity<List<Job>>(userService.searchJobByLocation(location.toUpperCase(), userId),HttpStatus.OK);
+			}
+			//Return jobs based on both designation and location
+			else {
+				return new ResponseEntity<List<Job>>(userService.searchJobByLocationAndDesignation(location.toUpperCase(), designation.toUpperCase(), userId),HttpStatus.OK);
+			}
+		}
+		catch(Exception exception) {
+			logger.error("Exception in company/searchbylocation");
+			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
+		}
+	}
+	
 	/**
 	 * 
 	 * @param experience

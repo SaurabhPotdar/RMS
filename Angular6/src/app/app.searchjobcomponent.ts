@@ -24,9 +24,9 @@ export class SearchJobComponent  {
 
     constructor(private service:RmsService, private router:Router){} 
     
-    searchJob(){
-        this.service.searchJob(this.searchId).subscribe((job: Job)=>this.job=job,error=>alert(error.error));
-        this.flag=true;
-    }
+    // searchJob(){
+    //     this.service.searchJob(this.searchId).subscribe((job: Job)=>this.job=job,error=>alert(error.error));
+    //     this.flag=true;
+    // }
 
 }

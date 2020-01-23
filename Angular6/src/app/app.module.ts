@@ -22,6 +22,7 @@ import { CompanyComponent } from './app.companycomponent';
 import { Error403Component } from './app.error403component';
 import { UserComponent } from './app.usercomponent';
 import { LogoutComponent } from './app.logoutcomponent';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 //{path: 'show/:text', component: ShowComponent},
 const myroutes:Routes= [
@@ -51,7 +52,8 @@ const myroutes:Routes= [
         BrowserModule,
         FormsModule,
         HttpClientModule,
-        RouterModule.forRoot(myroutes)
+        RouterModule.forRoot(myroutes),
+        NgxPaginationModule
     ],
     declarations: [
         AppComponent,

@@ -46,10 +46,8 @@ export class RmsService{
         return this.myhttp.post('http://localhost:9088/company/addjob?userId='+sessionStorage.getItem("userId"),data);
     }
 
-    searchJob(data:any){
-        // return this.myhttp.get('http://localhost:9088/user/searchbylocation'+data);
-        return this.myhttp.get('http://localhost:9088/user/searchbylocation?userId='+sessionStorage.getItem("userId")+'&location='+data);
-        //http://localhost:9088/user/searchbylocation?userId=2&location=Pune
+    searchJob(location:any, designation:any){
+        return this.myhttp.get('http://localhost:9088/user/search?userId='+sessionStorage.getItem("userId")+'&location='+location+'&designation='+designation);
     }
 
     uploadFile(data:any){
