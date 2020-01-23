@@ -42,27 +42,37 @@ public class User {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="user_id")
 	private int userId;
+	
 	@Column(name="first_name")
 	private String firstName;
+	
 	@Column(name="email_Id")
 	@Email(message="Enter valid email eg:abc@gmail.com")
 	private String email;
+	
 	@Column(name="password")
 	private String password;
+	
 	@Column(name="position")
 	private String position;
+	
 	@Column(name="years_of_experience")
 	private int experience;
+	
 	@Column(name="phone_number")
 	private String phoneNumber;
+	
 	@Column(name="role")
 	private String role;  //For user, admin and company
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="user_id")
 	private List<Qualification> qualification;
+	
 	@ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinTable(name="user_job", joinColumns = {@JoinColumn(name="user_id")}, inverseJoinColumns = {@JoinColumn(name="job_id")})
 	private Set<Job> jobs = new HashSet<>();
+	
 	@OneToOne
 	@JoinColumn(name="file_id")
 	private DatabaseFile file;
@@ -293,7 +303,7 @@ public class User {
 	}
 
 
-
+	
 	
 	
 	
