@@ -13,7 +13,6 @@ import { HomeComponent } from './app.homecomponent';
 import { RegisterCompanyComponent } from './app.registercompanycomponent';
 import { RegisterUserComponent } from './app.registerusercomponent';
 import { JobComponent } from './app.jobcomponent';
-import { SearchJobComponent } from './app.searchjobcomponent';
 import { UploadComponent } from './app.uploadcomponenet';
 import { Error404Component } from './app.error404component';
 import { LoginComponent } from './app.logincomponent';
@@ -39,7 +38,6 @@ const myroutes:Routes= [
     {path: 'home', component: HomeComponent},
     {path: 'registeruser', component: RegisterUserComponent},
     {path: 'addjob', component: JobComponent},
-    {path: 'searchjob', component: SearchJobComponent},
     {path: 'upload', component: UploadComponent},
     { path: 'login', component:LoginComponent},
     { path: 'blog', component:BlogComponent},
@@ -72,7 +70,6 @@ const myroutes:Routes= [
         HomeComponent,
         RegisterUserComponent,
         JobComponent,
-        SearchJobComponent,
         UploadComponent,
         Error404Component,
         Error403Component,
