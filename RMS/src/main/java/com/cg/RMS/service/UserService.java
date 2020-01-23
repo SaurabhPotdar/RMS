@@ -23,7 +23,7 @@ public interface UserService {
 	
 	public List<Job> searchJobByExperience(int experience);
 	
-	public List<Job> searchJobByDesignation(String designation);
+	public List<Job> searchJobByDesignation(String designation, int userId);
 
 	public Job searchJobById(int jobId);
 

@@ -15,5 +15,7 @@ public interface JobRepository extends JpaRepository<Job, Integer> {
 	 
 	 public List<Job> findByExperienceLessThanEqual(@Param("experience") int experience);
 	 
+	 public List<Job> findByLocationAndDesignation(@Param("location") String location, @Param("designation") String designation);
+	 
 
 }

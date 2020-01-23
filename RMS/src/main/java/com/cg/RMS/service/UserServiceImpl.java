@@ -89,16 +89,25 @@ public class UserServiceImpl implements UserService {
 	 * 
 	 */
 	@Override
-	public List<Job> searchJobByDesignation(String designation) {
+	public List<Job> searchJobByDesignation(String designation, int userId) {
 		List<Job> jobList = jobRepository.findByDesignation(designation);
+		List<Job> newJobList = new ArrayList<>();  //To store all job for which user has not applied yet
 		if(jobList.size()!=0) {
-			logger.trace("Getting jobList");
-			return jobList;
+			User user = searchUser(userId);
+			Set<Job> appliedJob = user.getJobs();
+			for(Job job:jobList) {
+				//Check is user has applied for job, if not add it to list to display to user.
+				if(!appliedJob.contains(job)) {
+					newJobList.add(job);  //Return as a list to display to user
+				}
+			}
+			return newJobList;
 		}
 		else {
 			logger.error("No jobs found");
 			throw new RmsException("No jobs found");
 		}
+		
 	}
 
 
@@ -184,8 +193,8 @@ public class UserServiceImpl implements UserService {
 	public boolean applyForJob(int userId, int jobId) {
 		User user = searchUser(userId);
 		Job job = searchJobById(jobId);
-		Set<Job> appliedJob = user.getJobs();
-		Set<User> usersApplied = job.getUsersApplied();
+		Set<Job> appliedJob = user.getJobs();  //Jobs list in user(For adding the job to the list of applied jobs)
+		Set<User> usersApplied = job.getUsersApplied();  //Users list in job
 		//Check is user has already applied for the job
 		if(appliedJob.contains(job)) {
 			throw new RmsException("Already applied for this job");

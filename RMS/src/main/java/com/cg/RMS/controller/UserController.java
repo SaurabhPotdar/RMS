@@ -75,11 +75,11 @@ public class UserController {
 	 * @return
 	 */
 	@GetMapping(value="/searchbydesignation")
-	public ResponseEntity<?> searchByDesignation(@RequestParam("designation") String designation) {
+	public ResponseEntity<?> searchByDesignation(@RequestParam("designation") String designation, @RequestParam("userId") int userId) {
 		try {
 			//Converting it to uppercase to avoid problems while searching with Spring Data
 			designation = designation.toUpperCase();
-			List<Job> jobList = userService.searchJobByDesignation(designation);
+			List<Job> jobList = userService.searchJobByDesignation(designation,userId);
 			return new ResponseEntity<List<Job>>(jobList,HttpStatus.OK);
 		}
 		catch(Exception exception) {

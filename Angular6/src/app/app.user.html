@@ -85,21 +85,21 @@
         <div class="search-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <form action="#" class="d-md-flex justify-content-between">
-                            <!-- <label for="Designation">Designation: </label>
-                            <select name="Designation" [(ngModel)]="searchData.designation" required>
+                            <select name="Designation" [(ngModel)]="searchData.designation">
                                 <option value="Software Developer">Software Developer</option>
-                                <option value="Web Developer">Web Developer</option>
-                                <option value="Data Analyst">Data Analyst</option>
+                                <option value="Full Stack Developer">Full Stack Developer</option>
                                 <option value="Data Scientist">Data Scientist</option>
-                            </select> -->
-                            <label for="Location">Location</label>
-                            <select name="Location" [(ngModel)]="searchData.location" required>
+                                <option value="Web Developer">Web Developer</option>
+                                <option value="UX Designer">UX Designer</option>
+                            </select>
+                            <select name="Location" [(ngModel)]="searchData.location">
                                 <option value="Pune">Pune</option>
                                 <option value="Banglore">Banglore</option>
-                                <option value="Mumbai">Mumbai</option>
                                 <option value="Hydrebad">Hydrebad</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Chennai">Chennai</option>
                             </select>
                             <button type="submit" (click)="searchJob()" class="template-btn">find job</button>
                         </form>
@@ -107,10 +107,10 @@
                 </div>
             </div>
         </div>
-        <div class="container" *ngIf="show">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center mt-5">
-                    <span>{{size}} Results found for {{searchData.location}}</span>
+                    <span>49 Results found for “Telecommunication”</span>
                 </div>
             </div>
         </div>
