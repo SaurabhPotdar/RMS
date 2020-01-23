@@ -2465,3 +2465,12 @@ Caused by: java.lang.Error: Unresolved compilation problem:
 2020-01-23 19:54:44,020 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 1
 2020-01-23 19:55:18,364 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 1
 2020-01-23 19:55:31,029 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 1
+2020-01-23 19:57:25,958 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] User found with Id: 1
+2020-01-23 20:05:00,751 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] User found with Id: 1
+2020-01-23 20:05:05,649 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] No jobs found
+2020-01-23 20:05:05,650 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-1] Exception in company/searchbylocation
+2020-01-23 20:05:09,549 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] No jobs found
+2020-01-23 20:05:09,549 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-2] Exception in company/searchbylocation
+2020-01-23 20:05:58,063 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 1
+2020-01-23 20:06:01,279 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] No jobs found
+2020-01-23 20:06:01,280 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-4] Exception in company/searchbylocation
