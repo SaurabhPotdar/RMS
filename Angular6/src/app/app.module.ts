@@ -25,6 +25,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { BlogSingleComponent } from './app.blogsinglecomponent';
 import { ContactComponent } from './app.contactcomponent';
 import { PricingComponent } from './app.pricing';
+import { JobSingleComponent } from './app.jobsinglecomponent';
 
 //{path: 'show/:text', component: ShowComponent},
 const myroutes:Routes= [
@@ -48,6 +49,7 @@ const myroutes:Routes= [
     { path: 'blog-single', component:BlogSingleComponent},
     { path: 'contact', component:ContactComponent},
     { path: 'pricing', component:PricingComponent},
+    { path: 'jobsingle', component:JobSingleComponent},
     { path: '**', component:Error404Component}
 ];
 
@@ -80,7 +82,8 @@ const myroutes:Routes= [
         LogoutComponent,
         BlogSingleComponent,
         ContactComponent,
-        PricingComponent
+        PricingComponent,
+        JobSingleComponent
         ],
     providers: [ ],
     bootstrap: [AppComponent]

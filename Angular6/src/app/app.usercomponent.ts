@@ -44,4 +44,9 @@ export class UserComponent implements OnInit{
         this.service.applyJob(data).subscribe(data=>{alert("Applied Successfully"),location.reload()});
     }
 
+    redirect(data:any){
+        this.service.setData(data);
+        this.router.navigate(['/jobsingle']);
+    }
+
 }

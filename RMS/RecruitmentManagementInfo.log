@@ -402,3 +402,15 @@ java.lang.ClassNotFoundException: org.springframework.security.crypto.bcrypt.BCr
 2020-01-23 23:43:01,561 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
 2020-01-23 23:43:01,561 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
 2020-01-23 23:43:02,170 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.63 seconds (JVM running for 16677.718)
+2020-01-24 11:01:53,167 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 41008 (C:\Users\saurpotd\Documents\GitHub\RMS\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\RMS\RMS)
+2020-01-24 11:01:53,169 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-24 11:01:53,170 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-24 11:02:00,944 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 8.277 seconds (JVM running for 10.467)
+2020-01-24 12:34:07,089 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 64408 (C:\Users\saurpotd\Documents\GitHub\RMS\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\RMS\RMS)
+2020-01-24 12:34:07,091 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-24 12:34:07,091 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-24 12:34:13,724 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 7.076 seconds (JVM running for 9.099)
+2020-01-24 12:34:24,940 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Checking if credentials are valid
+2020-01-24 12:34:36,345 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 2
+2020-01-24 12:36:08,093 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 2
+2020-01-24 12:37:00,529 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 2
