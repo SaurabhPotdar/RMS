@@ -43,4 +43,6 @@ public interface UserService {
 
 	public List<Job> searchJob(int userId);
 
+	public List<Job> jobsApplied(int userId);
+
 }

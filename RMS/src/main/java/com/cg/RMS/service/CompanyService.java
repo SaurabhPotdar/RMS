@@ -26,6 +26,8 @@ public interface CompanyService {
 	public Object login(String email, String password);
 
 	public boolean addJob(int id, Job job);
+
+	public List<User> usersAppliedForJob(int jobId);
 	
 	
 	

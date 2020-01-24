@@ -220,5 +220,15 @@ public class UserController {
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	@GetMapping("/jobsapplied")
+	public ResponseEntity<?> jobsApplied(@RequestParam("userId") int userId){
+		try {
+			return new ResponseEntity<List<Job>>(userService.jobsApplied(userId),HttpStatus.OK);
+		}
+		catch (Exception exception) {
+			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
+		}
+	}
 
 }

@@ -317,5 +317,14 @@ public class UserServiceImpl implements UserService {
     	}
     	return file;
     }
+	
+	@Override
+	public List<Job> jobsApplied(int userId){
+		User user = searchUser(userId);
+		Set<Job> jobs = user.getJobs();
+		if(jobs.size()==0)
+			throw new RmsException("No jobs found");
+		return new ArrayList<>(jobs);
+	}
 
 }

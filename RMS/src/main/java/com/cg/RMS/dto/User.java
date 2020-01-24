@@ -31,6 +31,8 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * @author Saurabh
  *
@@ -69,6 +71,7 @@ public class User {
 	@JoinColumn(name="user_id")
 	private List<Qualification> qualification;
 	
+	@JsonIgnore
 	@ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinTable(name="user_job", joinColumns = {@JoinColumn(name="user_id")}, inverseJoinColumns = {@JoinColumn(name="job_id")})
 	private Set<Job> jobs = new HashSet<>();

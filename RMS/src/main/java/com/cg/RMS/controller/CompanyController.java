@@ -119,9 +119,14 @@ public class CompanyController {
 		}
 	}
 	
-	@GetMapping(value="usersapplied")
-	public ResponseEntity<?> usersAppliedForJob(@RequestParam("companyId") int companyId, @RequestParam("jobId") int jobId){
-		return null;
+	@GetMapping(value="/usersapplied")
+	public ResponseEntity<?> usersAppliedForJob(@RequestParam("jobId") int jobId){
+		try {
+			return new ResponseEntity<List<User>>(companyService.usersAppliedForJob(jobId),HttpStatus.OK);
+		}
+		catch(Exception exception) {
+			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
+		}
 	}
 	
 }

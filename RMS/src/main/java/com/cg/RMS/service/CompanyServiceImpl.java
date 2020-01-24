@@ -1,6 +1,8 @@
 package com.cg.rms.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.transaction.Transactional;
 
@@ -15,6 +17,7 @@ import com.cg.rms.dto.Login;
 import com.cg.rms.dto.User;
 import com.cg.rms.exception.RmsException;
 import com.cg.rms.repository.CompanyRepository;
+import com.cg.rms.repository.JobRepository;
 import com.cg.rms.repository.UserRepository;
 
 /**
@@ -30,6 +33,9 @@ public class CompanyServiceImpl implements CompanyService{
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private JobRepository jobRepository;
 	
 	private static final Logger logger = LoggerFactory.getLogger(CompanyServiceImpl.class);
 
@@ -128,6 +134,17 @@ public class CompanyServiceImpl implements CompanyService{
 				return new Login("company",company.getCompanyId());
 		}
 		throw new RmsException("Invalid credentials");
+	}
+	
+	@Override
+	public List<User> usersAppliedForJob(int jobId){
+		Job job = jobRepository.findById(jobId).orElse(null);
+		if(job==null)
+			throw new RmsException("Job not found");
+		Set<User> users = job.getUsersApplied();
+		if(users.size()==0)
+			throw new RmsException("No users have applied");
+		return new ArrayList<User>(users);
 	}
 	
 	
