@@ -27,6 +27,9 @@ export class UserComponent implements OnInit{
 
     }
 
+    imageNumber:any;
+
+
     constructor(private service:RmsService, private router:Router){}
     
     searchJob(){
@@ -35,7 +38,10 @@ export class UserComponent implements OnInit{
         //For debugging write console.log(jobList) also in async. 
         this.service.searchJob(this.searchData.location, this.searchData.designation).subscribe((data:any[])=>{this.jobList=data;
         this.size=this.jobList.length;
-        this.show=true;},error=>{alert(error.error);
+        this.show=true;
+        this.imageNumber=Math.floor((Math.random() * 5) + 1)
+        console.log(this.imageNumber)}
+        ,error=>{alert(error.error);
         this.show=false});
     }
 

@@ -427,3 +427,7 @@ java.lang.ClassNotFoundException: org.springframework.security.crypto.bcrypt.BCr
 2020-01-24 12:55:38,527 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] Updated job list in service
 2020-01-24 12:55:38,557 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] Saved user in service
 2020-01-24 12:55:38,589 TRACE com.cg.rms.controller.UserController [http-nio-9088-exec-8] User: 2 successfully applied for job: 1
+2020-01-24 13:10:18,831 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] User found with Id: 2
+2020-01-24 13:12:15,007 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] No jobs found
+2020-01-24 13:12:15,012 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-2] Exception in company/searchbylocation
+2020-01-24 13:12:18,126 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 2
