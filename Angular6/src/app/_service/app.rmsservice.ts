@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -79,8 +80,8 @@ export class RmsService {
         return this.myhttp.post('http://localhost:9088/user/uploadFile', data);
     }
 
-    downloadFile(data:any){
-        return this,this.myhttp.get('http://localhost:9088/user/downloadFile?userId='+data);
+    downloadFile(data:Observable<Blob>){
+        return this,this.myhttp.get('http://localhost:9088/user/downloadFile?userId='+data,{'responseType':"blob"});
     }
 
 

@@ -44,14 +44,6 @@ export class CompanyComponent implements OnInit{
             var filename = 'Resume.pdf';
             saveAs(blob,filename);
         },error=>alert(error.error));
-
-        this.service.downloadFile(userId).subscribe(
-            response => {
-              var blob = new Blob([response], {type: 'application/pdf'});
-              var filename = 'Brochure.pdf';
-              saveAs(blob,filename);  
-            }
-       );
     }
 
 }

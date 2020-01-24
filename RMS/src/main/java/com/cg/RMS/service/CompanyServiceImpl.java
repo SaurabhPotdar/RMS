@@ -95,7 +95,11 @@ public class CompanyServiceImpl implements CompanyService{
 
 	@Override
 	public List<User> searchUserByPosition(String position) {
-		List<User> userList = userRepository.findByPosition(position);
+		List<User> userList;
+		if(position.equalsIgnoreCase("All"))
+			userList = userRepository.findAll();
+		else
+			userList = userRepository.findByPosition(position);
 		if(userList.size()!=0) {
 			logger.trace("Getting userList");
 			return userList;
