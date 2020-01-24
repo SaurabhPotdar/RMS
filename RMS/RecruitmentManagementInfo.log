@@ -431,3 +431,7 @@ java.lang.ClassNotFoundException: org.springframework.security.crypto.bcrypt.BCr
 2020-01-24 13:12:15,007 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] No jobs found
 2020-01-24 13:12:15,012 ERROR com.cg.rms.controller.UserController [http-nio-9088-exec-2] Exception in company/searchbylocation
 2020-01-24 13:12:18,126 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 2
+2020-01-24 13:15:09,403 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 64408 (C:\Users\saurpotd\Documents\GitHub\RMS\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\RMS\RMS)
+2020-01-24 13:15:09,403 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-24 13:15:09,403 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-24 13:15:12,496 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 3.181 seconds (JVM running for 2467.859)

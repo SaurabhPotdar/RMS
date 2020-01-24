@@ -160,7 +160,6 @@ public class UserController {
 	 */
 	@GetMapping(value="/applyforjob")
 	public ResponseEntity<?> applyForJob(@RequestParam("jobId") int jobId, @RequestParam("userId") int userId){
-		System.out.println(jobId+" "+userId);
 		try {
 			userService.applyForJob(userId, jobId);
 			logger.trace("User: "+userId+" successfully applied for job: "+jobId);
