@@ -67,12 +67,20 @@ export class RmsService {
         return this.myhttp.get('http://localhost:9088/user/search?userId=' + sessionStorage.getItem("userId") + '&location=' + location + '&designation=' + designation);
     }
 
+    applyJob(data: any) {
+        return this.myhttp.get('http://localhost:9088/user/applyforjob?jobId=' + data + '&userId=' + sessionStorage.getItem("userId"));
+    }
+    
+    searchUser(data:any){
+        return this.myhttp.get('http://localhost:9088/company/searchbyposition?position='+data);
+    }
+    
     uploadFile(data: any) {
         return this.myhttp.post('http://localhost:9088/user/uploadFile', data);
     }
 
-    applyJob(data: any) {
-        return this.myhttp.get('http://localhost:9088/user/applyforjob?jobId=' + data + '&userId=' + sessionStorage.getItem("userId"));
+    downloadFile(data:any){
+        return this,this.myhttp.get('http://localhost:9088/user/downloadFile?userId='+data);
     }
 
 

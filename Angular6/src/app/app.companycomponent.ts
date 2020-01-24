@@ -20,4 +20,24 @@ export class CompanyComponent implements OnInit{
 
     constructor(private service:RmsService, private router:Router){  }
 
+    searchData:any={designation:"All"};
+
+    userList:any[] = [];
+    
+    show:boolean=false;
+
+    size:number=0;
+
+    searchUser(){
+        this.service.searchUser(this.searchData.designation).subscribe((data:any[])=>{this.userList=data;
+        this.size=this.userList.length;
+        this.show=true;}
+        ,error=>{alert(error.error);
+        this.show=false});
+    }
+
+    download(userId:any){
+        this.service.downloadFile(userId).subscribe(data=>alert("Downloading"),error=>alert(error.error));
+    }
+
 }
