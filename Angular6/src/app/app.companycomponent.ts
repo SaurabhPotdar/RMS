@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RmsService} from './_service/app.rmsservice'
 import { Router } from '@angular/router'
+import { saveAs } from 'file-saver';
+
 
 @Component({
     selector: 'companypage',
@@ -37,7 +39,19 @@ export class CompanyComponent implements OnInit{
     }
 
     download(userId:any){
-        this.service.downloadFile(userId).subscribe(data=>alert("Downloading"),error=>alert(error.error));
+        this.service.downloadFile(userId).subscribe((data)=>{
+            var blob = new Blob([data],{type:'application/pdf'});
+            var filename = 'Resume.pdf';
+            saveAs(blob,filename);
+        },error=>alert(error.error));
+
+        this.service.downloadFile(userId).subscribe(
+            response => {
+              var blob = new Blob([response], {type: 'application/pdf'});
+              var filename = 'Brochure.pdf';
+              saveAs(blob,filename);  
+            }
+       );
     }
 
 }

@@ -541,3 +541,9 @@ java.lang.ClassNotFoundException: org.springframework.security.crypto.bcrypt.BCr
 2020-01-24 16:47:59,528 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] No file found
 2020-01-24 16:48:21,574 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-7] User found with Id: 2
 2020-01-24 16:48:21,574 ERROR com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-7] No file found
+2020-01-24 16:51:54,074 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] User found with Id: 1
+2020-01-24 16:51:54,150 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] File added to database
+2020-01-24 16:52:07,093 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
+2020-01-24 16:52:07,094 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] File added to database
+2020-01-24 16:52:17,793 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 2
+2020-01-24 16:52:46,359 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 2
