@@ -414,3 +414,16 @@ java.lang.ClassNotFoundException: org.springframework.security.crypto.bcrypt.BCr
 2020-01-24 12:34:36,345 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 2
 2020-01-24 12:36:08,093 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 2
 2020-01-24 12:37:00,529 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 2
+2020-01-24 12:40:34,083 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on DIN16004425 with PID 64408 (C:\Users\saurpotd\Documents\GitHub\RMS\RMS\target\classes started by saurpotd in C:\Users\saurpotd\Documents\GitHub\RMS\RMS)
+2020-01-24 12:40:34,083 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-24 12:40:34,084 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-24 12:40:37,145 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 3.133 seconds (JVM running for 392.51)
+2020-01-24 12:42:34,174 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 2
+2020-01-24 12:44:24,847 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 2
+2020-01-24 12:55:33,380 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-7] User found with Id: 2
+2020-01-24 12:55:38,501 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] User found with Id: 2
+2020-01-24 12:55:38,522 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] Job found with Id: 1
+2020-01-24 12:55:38,524 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] Updated user list in service
+2020-01-24 12:55:38,527 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] Updated job list in service
+2020-01-24 12:55:38,557 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] Saved user in service
+2020-01-24 12:55:38,589 TRACE com.cg.rms.controller.UserController [http-nio-9088-exec-8] User: 2 successfully applied for job: 1
