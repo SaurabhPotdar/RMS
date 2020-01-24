@@ -173,6 +173,21 @@ public class UserController {
 	}
 	
 	/**
+	 * 
+	 * @param userId
+	 * @return
+	 */
+	@GetMapping("/jobsapplied")
+	public ResponseEntity<?> jobsApplied(@RequestParam("userId") int userId){
+		try {
+			return new ResponseEntity<List<Job>>(userService.jobsApplied(userId),HttpStatus.OK);
+		}
+		catch (Exception exception) {
+			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	/**
 	 * Upload file to database
 	 * @param file
 	 * @return
@@ -215,16 +230,6 @@ public class UserController {
 	                .contentType(MediaType.parseMediaType(databaseFile.getFileType()))
 	                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + databaseFile.getFileName() + "\"")
 	                .body(new ByteArrayResource(databaseFile.getData()));
-		}
-		catch (Exception exception) {
-			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
-		}
-	}
-	
-	@GetMapping("/jobsapplied")
-	public ResponseEntity<?> jobsApplied(@RequestParam("userId") int userId){
-		try {
-			return new ResponseEntity<List<Job>>(userService.jobsApplied(userId),HttpStatus.OK);
 		}
 		catch (Exception exception) {
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);

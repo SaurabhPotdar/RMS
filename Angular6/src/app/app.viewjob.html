@@ -44,7 +44,6 @@
                         <div class="main-menu main-menu-light">
                             <ul>
                                 <li class="active"><a href="/userpage">home</a></li>
-                                <li><a href="/viewjob">Applied Jobs</a></li>
                                 <li><a href="/upload">Upload</a></li>
                                 <li class="menu-btn">
                                     <a href="/logout" class="template-btn">Logout</a>
@@ -70,102 +69,7 @@
     <!-- Header Area End -->
 
 
-    <!-- <mat-form-field>
-        <mat-label>Cars</mat-label>
-        <select matNativeControl required>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-      </mat-form-field> -->
-
-
-    <!-- Search Area Starts -->
-    <div class="search-area">
-        <div class="search-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <form action="#" class="d-md-flex justify-content-between">
-                            <select name="Designation" [(ngModel)]="searchData.designation">
-                                <option value="All">All</option>
-                                <option value="Software Developer">Software Developer</option>
-                                <option value="Full Stack Developer">Full Stack Developer</option>
-                                <option value="Data Scientist">Data Scientist</option>
-                                <option value="Web Developer">Web Developer</option>
-                                <option value="UX Designer">UX Designer</option>
-                            </select>
-                            <select name="Location" [(ngModel)]="searchData.location">
-                                <option value="All">All</option>
-                                <option value="Pune">Pune</option>
-                                <option value="Banglore">Banglore</option>
-                                <option value="Hydrebad">Hydrebad</option>
-                                <option value="Mumbai">Mumbai</option>
-                                <option value="Chennai">Chennai</option>
-                            </select>
-                            <button type="submit" (click)="searchJob()" class="template-btn">find job</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div *ngIf="show" class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mt-5">
-                    <span>{{size}} Results found</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Search Area End -->
-
-
     <!-- Jobs Area Starts -->
-    <!-- <section class="jobs-area section-padding">
-        <div *ngIf="show">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <table>
-                            <div class="single-job mb-4 d-lg-flex justify-content-between">
-                                <tr *ngFor='let job of jobList'>
-                                    <div class="job-text">
-                                        <h4>{{job.designation}}</h4>
-                                        <ul class="mt-4">
-                                            <li class="mb-3">
-                                                <h5><i class="fa fa-map-marker"></i> {{job.companyName}}</h5>
-                                            </li>
-                                            <li class="mb-3">
-                                                <h5><i class="fa fa-pie-chart"></i> {{job.location}}</h5>
-                                            </li>
-                                            <li>
-                                                <h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="job-img align-self-center">
-                                        <img src="assets/comport/images/job1.png" alt="job">
-                                    </div>
-                                    <div class="job-btn align-self-center">
-                                        <button type="button" class="third-btn job-btn1"
-                                            (click)="applyJob(jobList[i].jobId)">Apply</button>
-                                    </div>
-                                </tr>
-                            </div>
-                        </table>
-                    </div>
-                </div>
-                <div class="more-job-btn mt-5 text-center">
-                    <a href="#" class="template-btn">more job post</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Jobs Area End -->
-
-
     <section class="jobs-area section-padding">
         <div *ngIf="show">
             <div class="container">
@@ -184,19 +88,10 @@
                                         <li class="mb-3">
                                             <h5><i class="fa fa-pie-chart"></i> {{job.location}}</h5>
                                         </li>
-                                        <li>
-                                            <h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5>
-                                        </li>
                                     </ul>
                                 </div>
                                 <div class="job-img align-self-center">
                                     <img [src]='"assets/comport/images/job"+imageNumber+".png"' alt="job">
-                                </div>
-                                <div class="job-btn align-self-center">
-                                    <button type="button" class="third-btn job-btn1"
-                                        (click)="applyJob(jobList[i].jobId)">Apply</button>
-                                    <button type="button" class="third-btn job-btn1"
-                                        (click)="redirect(jobList[i])">More Info</button>
                                 </div>
                             </div>
                         </div>
@@ -206,24 +101,8 @@
             </div>
         </div>
     </section>
+    <!-- Jobs Area End -->
 
-
-    <!-- <div *ngIf="show">
-        <h3>Show Product</h3>
-        <table border="2px">
-            <tr>
-                <th>Job Id</th>
-                <th>Location</th>
-            </tr>
-            <tr *ngFor="let job of jobList; let i = index">
-                <td>{{job.jobId}}</td>
-                <td>{{job.location}}</td>
-                <td>
-                    <button type="button" (click)="applyJob(jobList[i].jobId)">Apply</button>
-                </td>
-            </tr>
-        </table>
-    </div> -->
 
     <!-- Footer Area Starts -->
     <footer class="footer-area section-padding">

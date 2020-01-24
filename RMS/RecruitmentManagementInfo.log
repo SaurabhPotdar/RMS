@@ -567,3 +567,40 @@ java.lang.ClassNotFoundException: org.springframework.security.crypto.bcrypt.BCr
 2020-01-24 20:26:13,190 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.696 seconds (JVM running for 185.818)
 2020-01-24 20:26:27,354 TRACE com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-1] Getting userList
 2020-01-24 20:26:30,175 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 1
+2020-01-24 20:42:15,372 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 3900 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-24 20:42:15,372 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-24 20:42:15,372 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-24 20:42:16,069 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.72 seconds (JVM running for 1148.697)
+2020-01-24 20:42:55,991 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 3900 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-24 20:42:55,991 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-24 20:42:55,991 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-24 20:42:56,632 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.666 seconds (JVM running for 1189.26)
+2020-01-24 20:43:02,311 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 3900 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-24 20:43:02,311 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-24 20:43:02,311 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-24 20:43:02,940 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.653 seconds (JVM running for 1195.568)
+2020-01-24 20:52:32,120 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Checking if credentials are valid
+2020-01-24 20:55:36,477 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 1
+2020-01-24 20:56:14,697 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 1
+2020-01-24 20:57:57,144 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] User found with Id: 1
+2020-01-24 20:58:22,062 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 3900 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-24 20:58:22,062 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-24 20:58:22,062 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-24 20:58:23,287 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 1.259 seconds (JVM running for 2115.915)
+2020-01-24 20:58:36,841 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Checking if credentials are valid
+2020-01-24 20:58:40,967 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 1
+2020-01-24 20:58:59,153 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 3900 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-24 20:58:59,153 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-24 20:58:59,153 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-24 20:58:59,816 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.687 seconds (JVM running for 2152.444)
+2020-01-24 20:59:17,975 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 1
+2020-01-24 20:59:23,078 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 1
+2020-01-24 20:59:25,759 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 1
+2020-01-24 20:59:31,981 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 1
+2020-01-24 20:59:38,390 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 1
+2020-01-24 20:59:41,124 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] User found with Id: 1
+2020-01-24 20:59:44,907 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-7] User found with Id: 1
+2020-01-24 20:59:55,575 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] User found with Id: 1
+2020-01-24 21:01:03,405 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] User found with Id: 1
+2020-01-24 21:11:08,897 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 1
+2020-01-24 21:11:31,545 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 1

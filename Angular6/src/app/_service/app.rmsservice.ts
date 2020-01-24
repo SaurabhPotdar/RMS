@@ -71,6 +71,10 @@ export class RmsService {
     applyJob(data: any) {
         return this.myhttp.get('http://localhost:9088/user/applyforjob?jobId=' + data + '&userId=' + sessionStorage.getItem("userId"));
     }
+
+    viewAppliedJob(){
+        return this.myhttp.get('http://localhost:9088/user/jobsapplied?userId='+ sessionStorage.getItem("userId"));
+    }
     
     searchUser(data:any){
         return this.myhttp.get('http://localhost:9088/company/searchbyposition?position='+data);
