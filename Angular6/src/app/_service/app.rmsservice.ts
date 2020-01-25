@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -87,6 +87,17 @@ export class RmsService {
     downloadFile(data:Observable<Blob>){
         return this,this.myhttp.get('http://localhost:9088/user/downloadFile?userId='+data,{'responseType':"blob"});
     }
+
+    imageFetchUrl:any='http://localhost:9088/company/downloadFile?companyId=';
+    
+    getBlobThumbnail(companyId:any): Observable<Blob> {
+        const headers = new HttpHeaders({
+          'Content-Type': 'image/png',
+          'Accept': 'image/png'
+        });
+        return this.myhttp.get<Blob>(this.imageFetchUrl+companyId,
+          { headers: headers, responseType: 'blob' as 'json' });
+      }
 
 
 }

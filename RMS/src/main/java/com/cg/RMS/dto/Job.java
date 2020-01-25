@@ -65,6 +65,9 @@ public class Job {
 	@Column(name="company_name")
 	private String companyName="";
 	
+//	@Column(name="company_id")
+//	private int companyId;
+	
 	@Column(name = "created_date", nullable = false, updatable = false)
 	@CreatedDate
 	@Temporal(TemporalType.TIMESTAMP)

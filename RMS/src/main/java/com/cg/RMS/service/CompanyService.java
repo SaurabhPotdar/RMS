@@ -33,6 +33,10 @@ public interface CompanyService {
 	public List<User> usersAppliedForJob(int jobId);
 
 	public DatabaseFile storeFile(MultipartFile file, int userId);
+
+	public DatabaseFile downloadFile(int companyId);
+
+	public DatabaseFile getFile(String fileId);
 	
 	
 	

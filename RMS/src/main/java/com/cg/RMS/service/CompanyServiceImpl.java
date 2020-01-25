@@ -19,6 +19,7 @@ import com.cg.rms.dto.DatabaseFile;
 import com.cg.rms.dto.Job;
 import com.cg.rms.dto.Login;
 import com.cg.rms.dto.User;
+import com.cg.rms.exception.FileNotFoundException;
 import com.cg.rms.exception.FileStorageException;
 import com.cg.rms.exception.RmsException;
 import com.cg.rms.repository.CompanyRepository;
@@ -193,6 +194,29 @@ public class CompanyServiceImpl implements CompanyService{
         } catch (IOException ex) {
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
         }
+    }
+	
+	/**
+     * 
+     */
+	@Override
+	public DatabaseFile getFile(String fileId) {
+        return dbFileRepository.findById(fileId)
+                .orElseThrow(() -> new FileNotFoundException("File not found with id " + fileId));
+    }
+    
+    /**
+     * 
+     */
+	@Override
+    public DatabaseFile downloadFile(int companyId) {
+    	Company company = searchCompany(companyId);
+    	DatabaseFile file = company.getFile();
+    	if(file==null) {
+    		logger.error("No file found");
+    		throw new RmsException("No file uploaded by user");
+    	}
+    	return file;
     }
 	
 	
