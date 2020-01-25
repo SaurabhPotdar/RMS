@@ -1,5 +1,6 @@
 package com.cg.rms.service;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -10,13 +11,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.cg.rms.dto.Company;
+import com.cg.rms.dto.DatabaseFile;
 import com.cg.rms.dto.Job;
 import com.cg.rms.dto.Login;
 import com.cg.rms.dto.User;
+import com.cg.rms.exception.FileStorageException;
 import com.cg.rms.exception.RmsException;
 import com.cg.rms.repository.CompanyRepository;
+import com.cg.rms.repository.DatabaseFileRepository;
 import com.cg.rms.repository.JobRepository;
 import com.cg.rms.repository.UserRepository;
 
@@ -36,6 +42,9 @@ public class CompanyServiceImpl implements CompanyService{
 	
 	@Autowired
 	private JobRepository jobRepository;
+	
+	@Autowired
+	private DatabaseFileRepository dbFileRepository;
 	
 	private static final Logger logger = LoggerFactory.getLogger(CompanyServiceImpl.class);
 
@@ -150,6 +159,41 @@ public class CompanyServiceImpl implements CompanyService{
 			throw new RmsException("No users have applied");
 		return new ArrayList<User>(users);
 	}
+	
+	public Company searchCompany(int companyId) {
+		Company company = companyRepository.findById(companyId).orElse(null);
+		if(company!=null)
+			return company;
+		throw new RmsException("No company found");
+	}
+	
+	/**
+	 * 
+	 */
+	@Override
+	public DatabaseFile storeFile(MultipartFile file, int companyId) {
+        // Normalize file name
+        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+
+        try {
+            // Check if the file's name contains invalid characters
+            if(fileName.contains("..")) {
+            	logger.error("Invalid path sequence exception in Service");
+                throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
+            }
+
+            DatabaseFile dbFile = new DatabaseFile(fileName, file.getContentType(), file.getBytes());
+
+            Company company = searchCompany(companyId);
+            company.setFile(dbFile);
+            companyRepository.save(company);
+            dbFileRepository.save(dbFile);
+            logger.trace("File added to database");
+            return dbFile;
+        } catch (IOException ex) {
+            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
+        }
+    }
 	
 	
 

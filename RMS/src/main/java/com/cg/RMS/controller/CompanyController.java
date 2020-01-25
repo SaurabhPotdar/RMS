@@ -16,9 +16,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.cg.rms.dto.Company;
+import com.cg.rms.dto.DatabaseFile;
 import com.cg.rms.dto.Job;
+import com.cg.rms.dto.Response;
 import com.cg.rms.dto.User;
 import com.cg.rms.service.CompanyServiceImpl;
 
@@ -128,5 +132,22 @@ public class CompanyController {
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	/**
+	 * Upload file to database
+	 * @param file
+	 * @return
+	 */
+	@PostMapping("/uploadFile")
+    public Response uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("companyId") int companyId) {
+		DatabaseFile fileName = companyService.storeFile(file,companyId);
+    	String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("/downloadFile/")
+                .path(fileName.getFileName())
+                .toUriString();
+
+        return new Response(fileName.getFileName(), fileDownloadUri,
+                file.getContentType(), file.getSize());
+    }
 	
 }

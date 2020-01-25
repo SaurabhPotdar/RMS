@@ -10,7 +10,9 @@ import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Email;
@@ -52,6 +54,10 @@ public class Company {
 	@Column(name="role")
 	private String role;
 	
+	@OneToOne
+	@JoinColumn(name="logo")
+	private DatabaseFile file;
+	
 	@Column(name = "created_date", nullable = false, updatable = false)
 	@CreatedDate
 	@Temporal(TemporalType.TIMESTAMP)
@@ -68,8 +74,8 @@ public class Company {
 	private String modifiedBy;
 
 	public Company(int companyId, @Email(message = "Enter valid email eg:abc@gmail.com") String email, String password,
-			String companyName, String companyAddress, List<Job> jobs, String role, Date createdDate, Date modifiedDate,
-			String createdBy, String modifiedBy) {
+			String companyName, String companyAddress, List<Job> jobs, String role, DatabaseFile file, Date createdDate,
+			Date modifiedDate, String createdBy, String modifiedBy) {
 		super();
 		this.companyId = companyId;
 		this.email = email;
@@ -77,7 +83,8 @@ public class Company {
 		this.companyName = companyName;
 		this.companyAddress = companyAddress;
 		this.jobs = jobs;
-		this.role = role;
+		this.role = "Company";
+		this.file = file;
 		this.createdDate = createdDate;
 		this.modifiedDate = modifiedDate;
 		this.createdBy = createdBy;
@@ -168,6 +175,21 @@ public class Company {
 		this.password = password;
 	}
 	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = "Company";
+	}
+
+	public DatabaseFile getFile() {
+		return file;
+	}
+
+	public void setFile(DatabaseFile file) {
+		this.file = file;
+	}
 
 	@Override
 	public String toString() {

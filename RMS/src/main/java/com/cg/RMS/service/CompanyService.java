@@ -5,7 +5,10 @@ package com.cg.rms.service;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.cg.rms.dto.Company;
+import com.cg.rms.dto.DatabaseFile;
 import com.cg.rms.dto.Job;
 import com.cg.rms.dto.User;
 
@@ -28,6 +31,8 @@ public interface CompanyService {
 	public boolean addJob(int id, Job job);
 
 	public List<User> usersAppliedForJob(int jobId);
+
+	public DatabaseFile storeFile(MultipartFile file, int userId);
 	
 	
 	
