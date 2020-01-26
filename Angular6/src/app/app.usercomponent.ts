@@ -30,6 +30,8 @@ export class UserComponent implements OnInit {
 
     imageUrl:any[] = [];
 
+    index:number=0;
+
 
     constructor(private service: RmsService, private router: Router) { }
 
@@ -44,6 +46,9 @@ export class UserComponent implements OnInit {
             this.imageNumber = Math.floor((Math.random() * 5) + 1);
             console.log(this.jobList.length);
             this.getThumbnail();
+            // for(let i=0;i<this.jobList.length;i++){
+            //     this.getThumbnail();
+            // }
         }
             , error => {
                 alert(error.error);
@@ -80,6 +85,8 @@ export class UserComponent implements OnInit {
         let reader = new FileReader();
         reader.addEventListener("load", () => {
             this.imageBlobUrl = reader.result.toString();
+            // this.imageUrl[this.index] = this.imageBlobUrl;
+            // this.index=this.index+1;
         }, false);
         if (image) {
             reader.readAsDataURL(image);
