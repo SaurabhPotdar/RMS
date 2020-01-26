@@ -15,7 +15,7 @@ export class ViewJobComponent implements OnInit{
     constructor(private service:RmsService, private router:Router){}
     
     ngOnInit(): void {
-        this.service.viewAppliedJob().subscribe((data:any[])=>{this.jobList=data;
+        this.service.viewJobAppliedByUser().subscribe((data:any[])=>{this.jobList=data;
         this.imageNumber=Math.floor((Math.random() * 5) + 1);
         console.log(this.jobList.length)}
         ,error=>alert(error.error));

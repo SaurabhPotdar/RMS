@@ -103,9 +103,13 @@ public class CompanyServiceImpl implements CompanyService{
 
 
 
+	/**
+	 * Search a user by designation. eg:Software Developer
+	 */
 	@Override
 	public List<User> searchUserByPosition(String position) {
 		List<User> userList;
+		//Return all users if designation is All
 		if(position.equalsIgnoreCase("All"))
 			userList = userRepository.findAll();
 		else
@@ -121,7 +125,9 @@ public class CompanyServiceImpl implements CompanyService{
 	}
 
 
-
+	/**
+	 * Search a user by experience.
+	 */
 	@Override
 	public List<User> searchUserByExperience(int experience) {
 		List<User> userList = userRepository.findByExperienceGreaterThanEqual(experience);
@@ -135,6 +141,9 @@ public class CompanyServiceImpl implements CompanyService{
 		}
 	}
 
+	/**
+	 * Check user credentials and return appropriate object User or Company.
+	 */
 	@Override
 	public Object login(String email, String unencryptedPassword) {
 		User user = userRepository.findByEmail(email);
@@ -150,8 +159,12 @@ public class CompanyServiceImpl implements CompanyService{
 		throw new RmsException("Invalid credentials");
 	}
 	
+	
+	/**
+	 * Returns all users who have applied for a job.
+	 */
 	@Override
-	public List<User> usersAppliedForJob(int jobId){
+	public List<User> usersAppliedForJob(int jobId, int companyId){
 		Job job = jobRepository.findById(jobId).orElse(null);
 		if(job==null)
 			throw new RmsException("Job not found");
@@ -161,6 +174,11 @@ public class CompanyServiceImpl implements CompanyService{
 		return new ArrayList<User>(users);
 	}
 	
+	/**
+	 * Utility function for searching company
+	 * @param companyId
+	 * @return
+	 */
 	public Company searchCompany(int companyId) {
 		Company company = companyRepository.findById(companyId).orElse(null);
 		if(company!=null)
@@ -169,7 +187,7 @@ public class CompanyServiceImpl implements CompanyService{
 	}
 	
 	/**
-	 * 
+	 * Upload file to database
 	 */
 	@Override
 	public DatabaseFile storeFile(MultipartFile file, int companyId) {
@@ -197,7 +215,7 @@ public class CompanyServiceImpl implements CompanyService{
     }
 	
 	/**
-     * 
+     * Utility function for downloading file from database.
      */
 	@Override
 	public DatabaseFile getFile(String fileId) {
@@ -206,7 +224,7 @@ public class CompanyServiceImpl implements CompanyService{
     }
     
     /**
-     * 
+     * Download file from database.
      */
 	@Override
     public DatabaseFile downloadFile(int companyId) {
@@ -218,6 +236,19 @@ public class CompanyServiceImpl implements CompanyService{
     	}
     	return file;
     }
+
+	/**
+	 * Get jobs posted by company, for selecting jobId in frontend.
+	 * @param companyId
+	 * @return
+	 */
+	public List<Job> getJobsPostedByCompany(int companyId) {
+		Company company = searchCompany(companyId);
+		List<Job> jobs = company.getJobs();
+		if(jobs.size()==0)
+			throw new RmsException("No jobs found");
+		return jobs;
+	}
 	
 	
 

@@ -126,6 +126,27 @@ public class CompanyController {
 		}
 	}
 	
+	/**
+	 * First we return all jobs posted by company, so user can select jobId.
+	 * Then based on jobId selected we use usersAppliedForJob() to return list of users applied for job.
+	 * @param companyId
+	 * @return
+	 */
+	@GetMapping(value="/getJobId")
+	public ResponseEntity<?> getJobsPostedByCompany(@RequestParam("companyId") int companyId){
+		try {
+			return new ResponseEntity<List<Job>>(companyService.getJobsPostedByCompany(companyId),HttpStatus.OK);
+		}
+		catch (Exception exception) {
+			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
+		}
+	}
+	
+	/**
+	 * 
+	 * @param jobId
+	 * @return
+	 */
 	@GetMapping(value="/usersapplied")
 	public ResponseEntity<?> usersAppliedForJob(@RequestParam("jobId") int jobId){
 		try {

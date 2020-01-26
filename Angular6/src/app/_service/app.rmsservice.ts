@@ -10,36 +10,34 @@ export class RmsService {
 
     //To pass job data between userpage and jobsingle page.
     private data={};
-
     setData(data) {
         this.data = data;
     }
-
     getData() {
         let temp = this.data;
         this.clearData();
         return temp;
     }
-
     clearData() {
         this.data = undefined;
     }
 
     /**
-     * Method to log in
-     * @param email 
-     * @param password 
+     * 
+     * @param data - Form data containing email and password.
      */
     login(data: any) {
         console.log(data);
         return this.myhttp.post('http://localhost:9088/admin/login', data);
     }
 
+    /**
+     * Logout
+     */
     logout() {
         console.log("In logout");
         sessionStorage.removeItem("userId");
         sessionStorage.removeItem("userRole");
-
     }
 
     temp: any;
@@ -48,48 +46,102 @@ export class RmsService {
     //Dependency Injection
     constructor(private myhttp: HttpClient) { }
 
+    /**
+     * 
+     * @param data 
+     */
     registerCompany(data: any) {
-        //For RequestBody
-        console.log(data);
         return this.myhttp.post('http://localhost:9088/company/register', data);
     }
 
+    /**
+     * 
+     * @param data 
+     */
     registerUser(data: any) {
         console.log(data);
         return this.myhttp.post('http://localhost:9088/user/register', data);
     }
 
+    /**
+     * 
+     * @param data 
+     */
     addJob(data: any) {
         console.log(sessionStorage.getItem("userId"));
         return this.myhttp.post('http://localhost:9088/company/addjob?userId=' + sessionStorage.getItem("userId"), data);
     }
 
+    /**
+     * 
+     * @param location 
+     * @param designation 
+     */
     searchJob(location: any, designation: any) {
         return this.myhttp.get('http://localhost:9088/user/search?userId=' + sessionStorage.getItem("userId") + '&location=' + location + '&designation=' + designation);
     }
 
+    /**
+     * 
+     * @param data - Request body for job
+     */
     applyJob(data: any) {
         return this.myhttp.get('http://localhost:9088/user/applyforjob?jobId=' + data + '&userId=' + sessionStorage.getItem("userId"));
     }
 
-    viewAppliedJob(){
+    /**
+     *  View all jobs applied by a user.
+     */
+    viewJobAppliedByUser(){
         return this.myhttp.get('http://localhost:9088/user/jobsapplied?userId='+ sessionStorage.getItem("userId"));
     }
     
+    /**
+     * 
+     * @param data - Position in company, eg: Software Developer etc
+     */
     searchUser(data:any){
         return this.myhttp.get('http://localhost:9088/company/searchbyposition?position='+data);
     }
     
+    /**
+     * Upload resume for user.
+     * @param data - Form data containing file and userId
+     */
     uploadFile(data: any) {
         return this.myhttp.post('http://localhost:9088/user/uploadFile', data);
     }
 
+    /**
+     * Download resume
+     * @param data 
+     */
     downloadFile(data:Observable<Blob>){
-        return this,this.myhttp.get('http://localhost:9088/user/downloadFile?userId='+data,{'responseType':"blob"});
+        return this.myhttp.get('http://localhost:9088/user/downloadFile?userId='+data,{'responseType':"blob"});
+    }
+
+    /**
+     * Get list of jobs posted by company. Used for selecting jobId for viewUsersAppliedForJob()
+     * @param companyId 
+     */
+    getJobsPostedByCompany(companyId:any){
+        return this.myhttp.get('http://localhost:9088/company/getJobId?companyId='+companyId);
+    }
+    
+    /**
+     * View users which have applied for a job
+     * @param jobId 
+     */
+    viewUsersAppliedForJob(jobId:any){
+        return this.myhttp.get('http://localhost:9088/company/usersapplied?jobId='+jobId);
     }
 
     imageFetchUrl:any='http://localhost:9088/company/downloadFile?companyId=';
     
+    /**
+     * Get the logo of company from database.
+     * @param companyId 
+     */
     getBlobThumbnail(companyId:any): Observable<Blob> {
         const headers = new HttpHeaders({
           'Content-Type': 'image/png',

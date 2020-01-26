@@ -43,9 +43,7 @@
                         </div>
                         <div class="main-menu main-menu-light">
                             <ul>
-                                <li class="active"><a href="/userpage">home</a></li>
-                                <li><a href="/viewjob">Applied Jobs</a></li>
-                                <li><a href="/upload">Upload</a></li>
+                                <li class="active"><a href="/companypage">home</a></li>
                                 <li class="menu-btn">
                                     <a href="/logout" class="template-btn">Logout</a>
                                 </li>
@@ -70,17 +68,6 @@
     <!-- Header Area End -->
 
 
-    <!-- <mat-form-field>
-        <mat-label>Cars</mat-label>
-        <select matNativeControl required>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
-      </mat-form-field> -->
-
-
     <!-- Search Area Starts -->
     <div class="search-area">
         <div class="search-bg">
@@ -88,23 +75,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <form action="#" class="d-md-flex justify-content-between">
-                            <select name="Designation" [(ngModel)]="searchData.designation">
-                                <option value="All">All</option>
-                                <option value="Software Developer">Software Developer</option>
-                                <option value="Full Stack Developer">Full Stack Developer</option>
-                                <option value="Data Scientist">Data Scientist</option>
-                                <option value="Web Developer">Web Developer</option>
-                                <option value="UX Designer">UX Designer</option>
+                            <select name="jobId" [(ngModel)]="jobId">
+                                <option *ngFor="let job of jobList" value={{job.jobId}}>{{job.designation}}</option>
                             </select>
-                            <select name="Location" [(ngModel)]="searchData.location">
-                                <option value="All">All</option>
-                                <option value="Pune">Pune</option>
-                                <option value="Banglore">Banglore</option>
-                                <option value="Hydrebad">Hydrebad</option>
-                                <option value="Mumbai">Mumbai</option>
-                                <option value="Chennai">Chennai</option>
-                            </select>
-                            <button type="submit" (click)="searchJob()" class="template-btn">find job</button>
+                            <button type="submit" (click)="viewUsersAppliedForJob()" class="template-btn">find users</button>
                         </form>
                     </div>
                 </div>
@@ -121,51 +95,6 @@
     <!-- Search Area End -->
 
 
-    <!-- Jobs Area Starts -->
-    <!-- <section class="jobs-area section-padding">
-        <div *ngIf="show">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-
-                        <table>
-                            <div class="single-job mb-4 d-lg-flex justify-content-between">
-                                <tr *ngFor='let job of jobList'>
-                                    <div class="job-text">
-                                        <h4>{{job.designation}}</h4>
-                                        <ul class="mt-4">
-                                            <li class="mb-3">
-                                                <h5><i class="fa fa-map-marker"></i> {{job.companyName}}</h5>
-                                            </li>
-                                            <li class="mb-3">
-                                                <h5><i class="fa fa-pie-chart"></i> {{job.location}}</h5>
-                                            </li>
-                                            <li>
-                                                <h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="job-img align-self-center">
-                                        <img src="assets/comport/images/job1.png" alt="job">
-                                    </div>
-                                    <div class="job-btn align-self-center">
-                                        <button type="button" class="third-btn job-btn1"
-                                            (click)="applyJob(jobList[i].jobId)">Apply</button>
-                                    </div>
-                                </tr>
-                            </div>
-                        </table>
-                    </div>
-                </div>
-                <div class="more-job-btn mt-5 text-center">
-                    <a href="#" class="template-btn">more job post</a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-    <!-- Jobs Area End -->
-
-
     <section class="jobs-area section-padding">
         <div *ngIf="show">
             <div class="container">
@@ -173,33 +102,22 @@
                     <div class="col-lg-12">
 
                         <div
-                            *ngFor="let job of jobList | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                            *ngFor="let user of userList | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
                             <div class="single-job mb-4 d-lg-flex justify-content-between">
                                 <div class="job-text">
-                                    <h4>{{job.designation}}</h4>
+                                    <h4>{{user.firstName}}</h4>
                                     <ul class="mt-4">
                                         <li class="mb-3">
-                                            <h5><i class="fa fa-map-marker"></i> {{job.companyName}}</h5>
+                                            <h5><i class="fa fa-map-marker"></i> {{user.position}}</h5>
                                         </li>
                                         <li class="mb-3">
-                                            <h5><i class="fa fa-pie-chart"></i> {{job.location}}</h5>
-                                        </li>
-                                        <li>
-                                            <h5><i class="fa fa-clock-o"></i> Deadline Deadline: Dec 11, 2018</h5>
+                                            <h5><i class="fa fa-pie-chart"></i>Experience: {{user.experience}}</h5>
                                         </li>
                                     </ul>
                                 </div>
-                                <!-- <div class="job-img align-self-center">
-                                    <img [src]='"assets/comport/images/job"+imageNumber+".png"' alt="job">
-                                </div> -->
-                                <div class="job-img align-self-center">
-                                    <img [src]='imageBlobUrl' alt="job">
-                                </div>
                                 <div class="job-btn align-self-center">
                                     <button type="button" class="third-btn job-btn1"
-                                        (click)="applyJob(jobList[i].jobId)">Apply</button>
-                                    <button type="button" class="third-btn job-btn1"
-                                        (click)="redirect(jobList[i])">More Info</button>
+                                        (click)="download(userList[i].userId)">Download Resume</button>
                                 </div>
                             </div>
                         </div>

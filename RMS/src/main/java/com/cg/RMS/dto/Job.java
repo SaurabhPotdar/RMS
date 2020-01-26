@@ -58,6 +58,7 @@ public class Job {
 	@ManyToOne
 	@JoinColumn(name="company_id")
 	private Company company;
+	
 	@JsonIgnore
 	@ManyToMany(mappedBy="jobs")
 	private Set<User> usersApplied = new HashSet<>();

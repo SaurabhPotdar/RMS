@@ -28,6 +28,8 @@ export class UserComponent implements OnInit {
 
     imageNumber: any;
 
+    imageUrl:any[] = [];
+
 
     constructor(private service: RmsService, private router: Router) { }
 
@@ -36,11 +38,11 @@ export class UserComponent implements OnInit {
         //If we write size after the asynchronous operation then it runs before list is fetched.
         //For debugging write console.log(jobList) also in async. 
         this.service.searchJob(this.searchData.location, this.searchData.designation).subscribe((data: any[]) => {
-        this.jobList = data;
+            this.jobList = data;
             this.size = this.jobList.length;
             this.show = true;
             this.imageNumber = Math.floor((Math.random() * 5) + 1);
-            console.log(this.imageNumber);
+            console.log(this.jobList.length);
             this.getThumbnail();
         }
             , error => {

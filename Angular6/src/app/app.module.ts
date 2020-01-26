@@ -27,6 +27,8 @@ import { ContactComponent } from './app.contactcomponent';
 import { PricingComponent } from './app.pricing';
 import { JobSingleComponent } from './app.jobsinglecomponent';
 import { ViewJobComponent } from './app.viewjobcomponent';
+import { User } from './_model/app.user';
+import { UsersAppliedComponent } from './app.usersapplied';
 
 //{path: 'show/:text', component: ShowComponent},
 const myroutes:Routes= [
@@ -52,6 +54,7 @@ const myroutes:Routes= [
     { path: 'pricing', component:PricingComponent},
     { path: 'jobsingle', component:JobSingleComponent},
     { path: 'viewjob', component:ViewJobComponent},
+    { path: 'usersapplied', component:UsersAppliedComponent},
     { path: '**', component:Error404Component}
 ];
 
@@ -86,7 +89,8 @@ const myroutes:Routes= [
         ContactComponent,
         PricingComponent,
         JobSingleComponent,
-        ViewJobComponent
+        ViewJobComponent,
+        UsersAppliedComponent
         ],
     providers: [ ],
     bootstrap: [AppComponent]
