@@ -161,10 +161,25 @@ public class CompanyServiceImpl implements CompanyService{
 	
 	
 	/**
+	 * Get jobs posted by company, for selecting jobId in frontend.
+	 * Once jobId is selected we pass it to usersAppliedForJob() to get list of users
+	 * @param companyId
+	 * @return
+	 */
+	public List<Job> getJobsPostedByCompany(int companyId) {
+		Company company = searchCompany(companyId);
+		List<Job> jobs = company.getJobs();
+		if(jobs.size()==0)
+			throw new RmsException("No jobs found");
+		return jobs;
+	}
+	
+	/**
 	 * Returns all users who have applied for a job.
+	 * @param jobId - To return a list of users
 	 */
 	@Override
-	public List<User> usersAppliedForJob(int jobId, int companyId){
+	public List<User> usersAppliedForJob(int jobId){
 		Job job = jobRepository.findById(jobId).orElse(null);
 		if(job==null)
 			throw new RmsException("Job not found");
@@ -173,6 +188,7 @@ public class CompanyServiceImpl implements CompanyService{
 			throw new RmsException("No users have applied");
 		return new ArrayList<User>(users);
 	}
+	
 	
 	/**
 	 * Utility function for searching company
@@ -237,18 +253,6 @@ public class CompanyServiceImpl implements CompanyService{
     	return file;
     }
 
-	/**
-	 * Get jobs posted by company, for selecting jobId in frontend.
-	 * @param companyId
-	 * @return
-	 */
-	public List<Job> getJobsPostedByCompany(int companyId) {
-		Company company = searchCompany(companyId);
-		List<Job> jobs = company.getJobs();
-		if(jobs.size()==0)
-			throw new RmsException("No jobs found");
-		return jobs;
-	}
 	
 	
 

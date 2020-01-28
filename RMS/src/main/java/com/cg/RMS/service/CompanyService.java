@@ -30,7 +30,7 @@ public interface CompanyService {
 
 	public boolean addJob(int id, Job job);
 
-	public List<User> usersAppliedForJob(int jobId, int companyId);
+	public List<User> usersAppliedForJob(int jobId);
 
 	public DatabaseFile storeFile(MultipartFile file, int userId);
 
