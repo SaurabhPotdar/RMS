@@ -1,164 +1,26 @@
-2020-01-26 00:08:25,483 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-5] Checking if credentials are valid
-2020-01-26 00:09:07,244 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-4] Checking if credentials are valid
-2020-01-26 00:09:15,540 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] User found with Id: 5
-2020-01-26 00:10:04,984 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-7] User found with Id: 5
-2020-01-26 00:10:47,218 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] User found with Id: 5
-2020-01-26 00:13:08,940 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-10] User found with Id: 5
-2020-01-26 00:15:03,417 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 5
-2020-01-26 00:18:10,548 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 16540 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 00:18:10,549 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 00:18:10,549 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 00:18:10,901 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.cg.rms.dto.Job column: company_id (should be mapped with insert="false" update="false")
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cg.rms.RmsApplication.main(RmsApplication.java:10)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.cg.rms.dto.Job column: company_id (should be mapped with insert="false" update="false")
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
-	... 21 common frames omitted
-Caused by: org.hibernate.MappingException: Repeated column in mapping for entity: com.cg.rms.dto.Job column: company_id (should be mapped with insert="false" update="false")
-	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:862)
-	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:880)
-	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:902)
-	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:634)
-	at org.hibernate.mapping.RootClass.validate(RootClass.java:267)
-	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:343)
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:461)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
-	... 25 common frames omitted
-2020-01-26 00:18:26,420 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 16540 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 00:18:26,420 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 00:18:26,420 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 00:18:26,768 ERROR org.springframework.boot.SpringApplication [restartedMain] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.cg.rms.dto.Job column: company_id (should be mapped with insert="false" update="false")
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.cg.rms.RmsApplication.main(RmsApplication.java:10)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Repeated column in mapping for entity: com.cg.rms.dto.Job column: company_id (should be mapped with insert="false" update="false")
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
-	... 21 common frames omitted
-Caused by: org.hibernate.MappingException: Repeated column in mapping for entity: com.cg.rms.dto.Job column: company_id (should be mapped with insert="false" update="false")
-	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:862)
-	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:880)
-	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:902)
-	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:634)
-	at org.hibernate.mapping.RootClass.validate(RootClass.java:267)
-	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:343)
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:461)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:935)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
-	... 25 common frames omitted
-2020-01-26 00:19:53,693 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 16540 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 00:19:53,693 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 00:19:53,693 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 00:19:54,363 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.706 seconds (JVM running for 1680.269)
-2020-01-26 11:48:40,110 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 17396 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 11:48:40,112 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 11:48:40,112 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 11:48:43,439 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 3.676 seconds (JVM running for 4.377)
-2020-01-26 11:48:56,165 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 17396 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 11:48:56,165 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 11:48:56,165 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 11:48:56,899 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.759 seconds (JVM running for 17.837)
-2020-01-26 11:49:21,714 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 17396 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 11:49:21,714 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 11:49:21,714 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 11:49:22,472 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.782 seconds (JVM running for 43.41)
-2020-01-26 11:50:11,756 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Checking if credentials are valid
-2020-01-26 11:50:19,552 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 1
-2020-01-26 11:51:46,477 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] User found with Id: 1
-2020-01-26 11:51:51,585 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] User found with Id: 1
-2020-01-26 11:58:15,158 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 1
-2020-01-26 12:02:10,583 TRACE com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-7] File added to database
-2020-01-26 12:02:52,383 TRACE com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-8] File added to database
-2020-01-26 12:03:04,641 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-9] User found with Id: 1
-2020-01-26 12:04:18,340 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-7] User found with Id: 1
-2020-01-26 12:04:25,059 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 1
-2020-01-26 12:05:07,191 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] User found with Id: 1
-2020-01-26 12:08:26,603 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 1
-2020-01-26 12:10:16,256 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] User found with Id: 1
-2020-01-26 12:10:46,969 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] User found with Id: 1
-2020-01-26 12:12:23,204 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Checking if credentials are valid
-2020-01-26 12:12:33,664 TRACE com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-2] Getting userList
-2020-01-26 12:21:12,396 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 17396 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 12:21:12,396 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 12:21:12,396 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 12:21:13,109 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.741 seconds (JVM running for 1954.048)
-2020-01-26 12:21:40,969 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 17396 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 12:21:40,969 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 12:21:40,969 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 12:21:41,655 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.708 seconds (JVM running for 1982.593)
-2020-01-26 19:50:21,703 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 12708 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 19:50:21,704 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 19:50:21,705 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 19:50:24,813 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 3.404 seconds (JVM running for 4.058)
-2020-01-26 19:50:32,399 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Checking if credentials are valid
-2020-01-26 20:17:49,174 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-3] Checking if credentials are valid
-2020-01-26 20:27:45,992 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 1
-2020-01-26 20:27:49,103 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 2
-2020-01-26 20:32:11,360 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 12708 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 20:32:11,360 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 20:32:11,360 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 20:32:12,126 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.796 seconds (JVM running for 2511.371)
-2020-01-26 20:32:17,836 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 12708 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 20:32:17,837 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 20:32:17,837 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 20:32:18,514 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.701 seconds (JVM running for 2517.758)
-2020-01-26 20:34:16,897 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 12708 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-01-26 20:34:16,898 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-01-26 20:34:16,898 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-01-26 20:34:17,740 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.891 seconds (JVM running for 2636.985)
-2020-01-26 20:43:31,013 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-10] Checking if credentials are valid
-2020-01-26 20:43:41,149 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-1] User found with Id: 1
-2020-01-26 20:44:40,724 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-8] User found with Id: 1
+2020-02-06 10:54:08,827 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 6936 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-02-06 10:54:08,831 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-02-06 10:54:08,831 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-02-06 10:54:12,044 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 3.567 seconds (JVM running for 4.257)
+2020-02-06 10:54:29,592 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Checking if credentials are valid
+2020-02-06 10:54:33,970 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 1
+2020-02-06 10:54:41,515 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-3] User found with Id: 1
+2020-02-06 10:54:46,325 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] User found with Id: 1
+2020-02-06 10:54:46,329 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] Job found with Id: 1
+2020-02-06 10:54:46,330 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] Updated user list in service
+2020-02-06 10:54:46,330 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] Updated job list in service
+2020-02-06 10:54:46,336 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-4] Saved user in service
+2020-02-06 10:54:46,345 TRACE com.cg.rms.controller.UserController [http-nio-9088-exec-4] User: 1 successfully applied for job: 1
+2020-02-06 10:54:51,767 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-5] User found with Id: 1
+2020-02-06 10:55:05,581 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] User found with Id: 1
+2020-02-06 10:55:05,587 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-6] File added to database
+2020-02-06 10:55:24,159 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-7] Checking if credentials are valid
+2020-02-06 10:55:48,666 TRACE com.cg.rms.service.UserServiceImpl [http-nio-9088-exec-2] User found with Id: 1
+2020-02-06 10:56:03,323 TRACE com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-3] Getting userList
+2020-02-06 10:56:06,396 ERROR com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-4] No user found with position: FULL STACK DEVELOPER
+2020-02-06 10:56:06,397 ERROR com.cg.rms.controller.CompanyController [http-nio-9088-exec-4] Exception in company/searchbyposition
+2020-02-06 10:56:09,496 TRACE com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-5] Getting userList
+2020-02-06 10:56:30,675 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-6] Checking if credentials are valid
+2020-02-06 10:58:34,855 TRACE com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-9] Found Company with Id: 1
+2020-02-06 10:58:34,869 TRACE com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-9] Adding job
+2020-02-06 10:58:34,870 TRACE com.cg.rms.controller.CompanyController [http-nio-9088-exec-9] Added job

@@ -1,0 +1,7 @@
+2020-01-31 19:57:33,443 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 20484 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-01-31 19:57:33,445 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-01-31 19:57:33,446 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-01-31 19:57:36,715 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 3.578 seconds (JVM running for 4.196)
+2020-01-31 19:58:05,850 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Checking if credentials are valid
+2020-01-31 19:58:06,079 ERROR com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Invalid credentials
+2020-01-31 19:58:10,290 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-2] Checking if credentials are valid

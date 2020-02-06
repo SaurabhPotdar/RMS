@@ -45,7 +45,7 @@ export class UserComponent implements OnInit {
             this.show = true;
             this.imageNumber = Math.floor((Math.random() * 5) + 1);
             console.log(this.jobList.length);
-            this.getThumbnail();
+            //this.getThumbnail();
             // for(let i=0;i<this.jobList.length;i++){
             //     this.getThumbnail();
             // }
