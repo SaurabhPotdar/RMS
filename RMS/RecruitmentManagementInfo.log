@@ -24,3 +24,7 @@
 2020-02-06 10:58:34,855 TRACE com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-9] Found Company with Id: 1
 2020-02-06 10:58:34,869 TRACE com.cg.rms.service.CompanyServiceImpl [http-nio-9088-exec-9] Adding job
 2020-02-06 10:58:34,870 TRACE com.cg.rms.controller.CompanyController [http-nio-9088-exec-9] Added job
+2020-02-06 11:02:40,759 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 6936 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-02-06 11:02:40,759 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-02-06 11:02:40,759 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-02-06 11:02:41,852 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 1.148 seconds (JVM running for 514.064)
