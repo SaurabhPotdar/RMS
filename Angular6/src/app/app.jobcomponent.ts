@@ -15,8 +15,7 @@ export class JobComponent  {
 
     addJob():any{
         console.log(sessionStorage.getItem("userId"));
-        this.service.addJob(this.model).subscribe((data)=>alert("Added Successfully"),error=>alert(error.error));
-        location.reload();
+        this.service.addJob(this.model).subscribe((data)=>{alert("Added Successfully");location.reload();},error=>alert(error.error));
         //this.router.navigate(['/show']);
     }
 
