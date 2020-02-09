@@ -1,5 +1,7 @@
+ec2-3-81-98-128.compute-1.amazonaws.com
+
 Add job
-http://localhost:9088/company/addjob?email=saur@gmail.com
+http://localhost:9088/company/addjob?userId=1
 {
 	"designation":"Software Developer",
 	"qualification":"B.Tech",

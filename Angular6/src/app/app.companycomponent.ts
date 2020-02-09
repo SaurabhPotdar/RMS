@@ -43,7 +43,7 @@ export class CompanyComponent implements OnInit{
             var blob = new Blob([data],{type:'application/pdf'});
             var filename = 'Resume.pdf';
             saveAs(blob,filename);
-        },error=>alert(error.error));
+        },error=>alert("No File uploaded by user"));
     }
 
 }

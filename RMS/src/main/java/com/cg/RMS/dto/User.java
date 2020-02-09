@@ -67,6 +67,7 @@ public class User {
 	@Column(name="role")
 	private String role;  //For user, admin and company
 	
+	@JsonIgnore
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="user_id")
 	private List<Qualification> qualification;
@@ -76,6 +77,7 @@ public class User {
 	@JoinTable(name="user_job", joinColumns = {@JoinColumn(name="user_id")}, inverseJoinColumns = {@JoinColumn(name="job_id")})
 	private Set<Job> jobs = new HashSet<>();
 	
+	@JsonIgnore
 	@OneToOne
 	@JoinColumn(name="file_id")
 	private DatabaseFile file;

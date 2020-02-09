@@ -23,6 +23,8 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * @author Saurabh
  *
@@ -54,6 +56,7 @@ public class Company {
 	@Column(name="role")
 	private String role;
 	
+	@JsonIgnore
 	@OneToOne
 	@JoinColumn(name="logo")
 	private DatabaseFile file;

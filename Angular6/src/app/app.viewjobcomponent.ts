@@ -15,6 +15,10 @@ export class ViewJobComponent implements OnInit{
     constructor(private service:RmsService, private router:Router){}
     
     ngOnInit(): void {
+        //Navigate to forbidden if a company tries to access user page.
+        if (!(sessionStorage.getItem('userRole') === "user")) {
+            this.router.navigate(['forbidden']);
+        }
         this.service.viewJobAppliedByUser().subscribe((data:any[])=>{this.jobList=data;
         this.imageNumber=Math.floor((Math.random() * 5) + 1);
         console.log(this.jobList.length)}

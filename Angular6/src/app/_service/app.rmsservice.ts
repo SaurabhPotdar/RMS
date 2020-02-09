@@ -28,7 +28,7 @@ export class RmsService {
      */
     login(data: any) {
         console.log(data);
-        return this.myhttp.post('http://localhost:9088/admin/login', data);
+        return this.myhttp.post('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/admin/login', data);
     }
 
     /**
@@ -51,7 +51,7 @@ export class RmsService {
      * @param data 
      */
     registerCompany(data: any) {
-        return this.myhttp.post('http://localhost:9088/company/register', data);
+        return this.myhttp.post('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/company/register', data);
     }
 
     /**
@@ -60,7 +60,7 @@ export class RmsService {
      */
     registerUser(data: any) {
         console.log(data);
-        return this.myhttp.post('http://localhost:9088/user/register', data);
+        return this.myhttp.post('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/user/register', data);
     }
 
     /**
@@ -69,7 +69,7 @@ export class RmsService {
      */
     addJob(data: any) {
         console.log(sessionStorage.getItem("userId"));
-        return this.myhttp.post('http://localhost:9088/company/addjob?userId=' + sessionStorage.getItem("userId"), data);
+        return this.myhttp.post('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/company/addjob?userId=' + sessionStorage.getItem("userId"), data);
     }
 
     /**
@@ -78,7 +78,7 @@ export class RmsService {
      * @param designation 
      */
     searchJob(location: any, designation: any) {
-        return this.myhttp.get('http://localhost:9088/user/search?userId=' + sessionStorage.getItem("userId") + '&location=' + location + '&designation=' + designation);
+        return this.myhttp.get('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/user/search?userId=' + sessionStorage.getItem("userId") + '&location=' + location + '&designation=' + designation);
     }
 
     /**
@@ -86,14 +86,14 @@ export class RmsService {
      * @param data - Request body for job
      */
     applyJob(data: any) {
-        return this.myhttp.get('http://localhost:9088/user/applyforjob?jobId=' + data + '&userId=' + sessionStorage.getItem("userId"));
+        return this.myhttp.get('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/user/applyforjob?jobId=' + data + '&userId=' + sessionStorage.getItem("userId"));
     }
 
     /**
      *  View all jobs applied by a user.
      */
     viewJobAppliedByUser(){
-        return this.myhttp.get('http://localhost:9088/user/jobsapplied?userId='+ sessionStorage.getItem("userId"));
+        return this.myhttp.get('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/user/jobsapplied?userId='+ sessionStorage.getItem("userId"));
     }
     
     /**
@@ -101,7 +101,7 @@ export class RmsService {
      * @param data - Position in company, eg: Software Developer etc
      */
     searchUser(data:any){
-        return this.myhttp.get('http://localhost:9088/company/searchbyposition?position='+data);
+        return this.myhttp.get('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/company/searchbyposition?position='+data);
     }
     
     /**
@@ -109,7 +109,7 @@ export class RmsService {
      * @param data - Form data containing file and userId
      */
     uploadFile(data: any) {
-        return this.myhttp.post('http://localhost:9088/user/uploadFile', data);
+        return this.myhttp.post('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/user/uploadFile', data);
     }
 
     /**
@@ -117,7 +117,7 @@ export class RmsService {
      * @param data 
      */
     downloadFile(data:Observable<Blob>){
-        return this.myhttp.get('http://localhost:9088/user/downloadFile?userId='+data,{'responseType':"blob"});
+        return this.myhttp.get('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/user/downloadFile?userId='+data,{'responseType':"blob"});
     }
 
     /**
@@ -125,7 +125,7 @@ export class RmsService {
      * @param companyId 
      */
     getJobsPostedByCompany(companyId:any){
-        return this.myhttp.get('http://localhost:9088/company/getJobId?companyId='+companyId);
+        return this.myhttp.get('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/company/getJobId?companyId='+companyId);
     }
     
     /**
@@ -133,10 +133,10 @@ export class RmsService {
      * @param jobId 
      */
     viewUsersAppliedForJob(jobId:any){
-        return this.myhttp.get('http://localhost:9088/company/usersapplied?jobId='+jobId);
+        return this.myhttp.get('http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/company/usersapplied?jobId='+jobId);
     }
 
-    imageFetchUrl:any='http://localhost:9088/company/downloadFile?companyId=';
+    imageFetchUrl:any='http://ec2-54-80-102-103.compute-1.amazonaws.com:9088/company/downloadFile?companyId=';
     
     /**
      * Get the logo of company from database.
