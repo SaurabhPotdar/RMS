@@ -20,7 +20,6 @@ export class UserComponent implements OnInit {
 
     ngOnInit() {
 
-        //Navigate to forbidden if a company tries to access user page.
         if (!(sessionStorage.getItem('userRole') === "user")) {
             this.router.navigate(['forbidden']);
         }

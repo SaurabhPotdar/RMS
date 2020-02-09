@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {RmsService} from './_service/app.rmsservice'
 import { Router } from '@angular/router'
 import { HttpErrorResponse, HttpClient } from '@angular/common/http';
@@ -8,7 +8,7 @@ import { HttpErrorResponse, HttpClient } from '@angular/common/http';
     templateUrl: 'app.upload.html'
 })
 
-export class UploadComponent implements OnInit{
+export class UploadComponent  {
 
     title = 'Upload Flight Data';
 
@@ -16,15 +16,6 @@ export class UploadComponent implements OnInit{
   
     myFiles:string [] = [];
     sMsg:string = '';
-
-    ngOnInit(){
-
-      //Navigate to forbidden if a company tries to access user page.
-      if((sessionStorage.getItem('userRole') === "company")){
-             this.router.navigate(['forbidden']);
-         }
-
-  }
   
      getFileDetails (e) {
       //console.log (e.target.files);
@@ -40,7 +31,7 @@ export class UploadComponent implements OnInit{
         frmData.append("file", this.myFiles[i]);
       }
       frmData.append("userId",sessionStorage.getItem("userId"));
-      this.service.uploadFile(frmData).subscribe(
+      this.myhttp.post('http://ec2-3-81-98-128.compute-1.amazonaws.com:9088/user/uploadFile',frmData).subscribe(
         data => {
           // SHOW A MESSAGE RECEIVED FROM THE WEB API.
           this.sMsg = data as string;
@@ -53,20 +44,6 @@ export class UploadComponent implements OnInit{
           console.log (err.message);    // Show error, if any.
         }
       );
-
-      // this.myhttp.post('http://ec2-3-81-98-128.compute-1.amazonaws.com:9088/user/uploadFile',frmData).subscribe(
-      //   data => {
-      //     // SHOW A MESSAGE RECEIVED FROM THE WEB API.
-      //     this.sMsg = data as string;
-      //     console.log (this.sMsg);
-      //     alert("Uploaded successfully");
-      //     location.reload();
-      //   }
-      //   ,
-      //   (err: HttpErrorResponse) => {
-      //     console.log (err.message);    // Show error, if any.
-      //   }
-      // );
     }
 
 

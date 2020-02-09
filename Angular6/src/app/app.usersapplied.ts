@@ -23,10 +23,6 @@ export class UsersAppliedComponent implements OnInit{
     size:any=0;
     
     ngOnInit(): void {
-        //Navigate to forbidden if a user tries to access company page.
-        if ((sessionStorage.getItem('userRole') === "user")) {
-            this.router.navigate(['forbidden']);
-        }
         this.service.getJobsPostedByCompany(sessionStorage.getItem("userId")).subscribe((data:any[])=>{
             this.jobList=data;
         },error=>alert(error.error));

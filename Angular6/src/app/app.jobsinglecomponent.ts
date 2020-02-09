@@ -18,10 +18,6 @@ export class JobSingleComponent  implements OnInit{
      * Get job data from userpage using service.
      */
     ngOnInit(): void {
-        //Navigate to forbidden if a company tries to access user page.
-        if((sessionStorage.getItem('userRole') === "company")){
-            this.router.navigate(['forbidden']);
-        }
         this.job=this.service.getData();
     }
 
