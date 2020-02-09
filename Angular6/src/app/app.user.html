@@ -173,7 +173,7 @@
                     <div class="col-lg-12">
 
                         <div
-                            *ngFor="let job of jobList | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+                            *ngFor="let job of jobList | paginate: { itemsPerPage: 4, currentPage: p }; let i = index">
                             <div class="single-job mb-4 d-lg-flex justify-content-between">
                                 <div class="job-text">
                                     <h4>{{job.designation}}</h4>
