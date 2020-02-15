@@ -58,7 +58,7 @@ public class CompanyController {
 		try {
 			companyService.registerCompany(company);
 			logger.trace("Registered company");
-			return new ResponseEntity<Company>(company,HttpStatus.OK);
+			return new ResponseEntity<Company>(company,HttpStatus.CREATED);
 		}
 		catch(Exception exception) {
 			logger.error("Caught validation exception in company/register Controller");
@@ -83,7 +83,7 @@ public class CompanyController {
 		try {
 			companyService.addJob(userId, job);
 			logger.trace("Added job");
-			return new ResponseEntity<Job>(job,HttpStatus.OK);
+			return new ResponseEntity<Job>(job,HttpStatus.CREATED);
 		}
 		catch(Exception exception) {
 			logger.error("Caught exception in company/addjob Controller");
@@ -165,10 +165,11 @@ public class CompanyController {
 	@PostMapping("/uploadFile")
     public Response uploadFile(@RequestParam("file") MultipartFile file, @RequestParam("companyId") int companyId) {
 		DatabaseFile fileName = companyService.storeFile(file,companyId);
-    	String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/downloadFile/")
-                .path(fileName.getFileName())
-                .toUriString();
+		//Return the download uri after uploading the file.
+    	String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()  //localhost:4200
+                .path("/downloadFile/")                                                //append /downloadFile/ to localhost:4200 
+                .path(fileName.getFileName())                                          //append fileName to localhost:4200/downloadFile/
+                .toUriString();                                                        //localhost:4200/downloadFile/fileName
 
         return new Response(fileName.getFileName(), fileDownloadUri,
                 file.getContentType(), file.getSize());

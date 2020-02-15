@@ -61,7 +61,7 @@ public class UserController {
 			user.setRole("User");
 			userService.registerUser(user);
 			logger.trace("Registering company");
-			return new ResponseEntity<User>(user,HttpStatus.OK);
+			return new ResponseEntity<User>(user,HttpStatus.CREATED);
 		}
 		catch(Exception exception) {
 			logger.error("Caught validation exception in company/register Controller");
