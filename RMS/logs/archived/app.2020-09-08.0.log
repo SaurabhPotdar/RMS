@@ -1,0 +1,4 @@
+2020-09-08 19:52:22,807 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 21476 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-09-08 19:52:22,808 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-09-08 19:52:22,809 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-09-08 19:52:25,530 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.991 seconds (JVM running for 3.596)

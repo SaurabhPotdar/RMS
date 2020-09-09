@@ -1,4 +1,9 @@
-2020-09-08 19:52:22,807 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 21476 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
-2020-09-08 19:52:22,808 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-09-08 19:52:22,809 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
-2020-09-08 19:52:25,530 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 2.991 seconds (JVM running for 3.596)
+2020-09-09 14:09:15,364 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 9716 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-09-09 14:09:15,367 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-09-09 14:09:15,367 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-09-09 14:09:18,476 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 3.543 seconds (JVM running for 4.39)
+2020-09-09 14:11:10,734 INFO com.cg.rms.RmsApplication [restartedMain] Starting RmsApplication on Saurabh with PID 9716 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\classes started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS)
+2020-09-09 14:11:10,734 DEBUG com.cg.rms.RmsApplication [restartedMain] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-09-09 14:11:10,734 INFO com.cg.rms.RmsApplication [restartedMain] The following profiles are active: production
+2020-09-09 14:11:11,488 INFO com.cg.rms.RmsApplication [restartedMain] Started RmsApplication in 0.782 seconds (JVM running for 117.403)
+2020-09-09 14:11:14,117 TRACE com.cg.rms.controller.AdminController [http-nio-9088-exec-1] Checking if credentials are valid
