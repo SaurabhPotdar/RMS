@@ -31,7 +31,7 @@ export class UploadComponent  {
         frmData.append("file", this.myFiles[i]);
       }
       frmData.append("userId",sessionStorage.getItem("userId"));
-      this.myhttp.post('http://ec2-3-81-98-128.compute-1.amazonaws.com:9088/user/uploadFile',frmData).subscribe(
+      this.myhttp.post('localhost:9088/user/uploadFile',frmData).subscribe(
         data => {
           // SHOW A MESSAGE RECEIVED FROM THE WEB API.
           this.sMsg = data as string;
@@ -41,6 +41,7 @@ export class UploadComponent  {
         }
         ,
         (err: HttpErrorResponse) => {
+          console.log("Failed");
           console.log (err.message);    // Show error, if any.
         }
       );
