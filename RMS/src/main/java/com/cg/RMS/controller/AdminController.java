@@ -29,6 +29,8 @@ public class AdminController {
 	@Autowired
 	HttpSession session;
 	
+	//Autowire the CompanyService interface, instead of implemented class.
+	//If there is more than one implementatation of same interface use @Qualifier.
 	@Autowired
 	private CompanyServiceImpl companyService;
 	

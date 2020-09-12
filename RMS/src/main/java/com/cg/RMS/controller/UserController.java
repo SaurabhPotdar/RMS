@@ -44,6 +44,8 @@ public class UserController {
 	@Autowired
 	HttpSession session;
 	
+	//Autowire the UserService interface, instead of implemented class.
+	//If there is more than one implementatation of same interface use @Qualifier.
 	@Autowired
 	private UserServiceImpl userService;
 	
