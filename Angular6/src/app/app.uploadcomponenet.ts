@@ -10,7 +10,7 @@ import { HttpErrorResponse, HttpClient } from '@angular/common/http';
 
 export class UploadComponent  {
 
-    title = 'Upload Flight Data';
+    title = 'Upload Resume';
 
     constructor(private service:RmsService, private router:Router, private myhttp:HttpClient){}
   
@@ -31,7 +31,7 @@ export class UploadComponent  {
         frmData.append("file", this.myFiles[i]);
       }
       frmData.append("userId",sessionStorage.getItem("userId"));
-      this.myhttp.post('localhost:9088/user/uploadFile',frmData).subscribe(
+      this.myhttp.post(this.service.uploadUrl,frmData).subscribe(
         data => {
           // SHOW A MESSAGE RECEIVED FROM THE WEB API.
           this.sMsg = data as string;
