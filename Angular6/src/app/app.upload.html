@@ -69,7 +69,7 @@
             </td>
         </tr>
         <tr>
-            <button (click)="uploadFiles()" class="btn btn-info">Upload</button>
+            <button (click)="uploadFiles();submitButton.disabled = true" #submitButton class="btn btn-info">Upload</button>
 
         </tr>
     </form>

@@ -122,7 +122,7 @@
               </div>
 
               <div class="p-t-15">
-                <button (click)="addJob()" [disabled]="f.form.invalid" class="btn btn--radius-2 btn--blue"
+                <button (click)="addJob();submitButton.disabled = true" [disabled]="f.form.invalid" #submitButton class="btn btn--radius-2 btn--blue"
                   type="submit">Add Job</button>
               </div>
 

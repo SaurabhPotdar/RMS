@@ -160,7 +160,7 @@
                         </div>
 
                           <div class="p-t-15">
-                              <button (click)="registerCompany()" [disabled]="f.form.invalid"
+                              <button (click)="registerCompany();submitButton.disabled = true" [disabled]="f.form.invalid" #submitButton
                                   class="btn btn--radius-2 btn--blue" type="submit">Register</button>
                           </div>
 

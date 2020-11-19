@@ -180,7 +180,7 @@
               </div>
 
               <div class="p-t-15">
-                <button (click)="registerUser()" [disabled]="f.form.invalid" class="btn btn--radius-2 btn--blue"
+                <button (click)="registerUser();submitButton.disabled = true" [disabled]="f.form.invalid" #submitButton class="btn btn--radius-2 btn--blue"
                   type="submit">Register</button>
               </div>
 
