@@ -15,7 +15,7 @@ Register company
 http://localhost:9088/company/register
 {
 	"email":"saur@gmail.com",
-	"password":"saur",
+	"password":"RMSsau@123",
 	"companyName":"Flipkart",
 	"companyAddress":"Banglore"
 }
@@ -27,7 +27,7 @@ http://localhost:9088/user/register
 	"firstName":"JDA",
 	"lastName":"JDA",
 	"email":"abc@gmail.com",
-	"password":"abc",
+	"password":"RMSsau@123",
 	"position":"Fresher",
 	"experience":0,
 	"phoneNumber":"8108734667"
