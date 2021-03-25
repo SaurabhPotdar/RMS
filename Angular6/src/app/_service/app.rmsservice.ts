@@ -7,8 +7,9 @@ import { Observable } from 'rxjs';
 })
 
 export class RmsService {
-
-
+    
+    //http://13.233.118.2:9087/user/uploadFile
+    //http://localhost:9087/user/uploadFile
     baseUrl:string="http://localhost:9088/";
     uploadUrl:string='localhost:9088/user/uploadFile';
 
