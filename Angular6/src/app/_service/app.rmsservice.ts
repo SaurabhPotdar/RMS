@@ -10,7 +10,7 @@ export class RmsService {
     
     //http://13.233.118.2:9087/user/uploadFile
     //http://localhost:9087/user/uploadFile
-    host:string = window.location.hostname;
+    host:string = window.location.hostname;  //https://www.w3schools.com/js/js_window_location.asp
     baseUrl:string= "http://" + this.host + ":9088/";
     uploadUrl:string= this.host + ':9088/user/uploadFile';
 
