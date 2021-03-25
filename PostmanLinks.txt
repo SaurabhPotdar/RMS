@@ -30,7 +30,7 @@ http://localhost:9088/user/register
 	"password":"RMSsau@123",
 	"position":"Fresher",
 	"experience":0,
-	"phoneNumber":"8108734667"
+	"phoneNumber":"8888888888"
 }
 
 Apply for job
