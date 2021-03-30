@@ -31,7 +31,7 @@ export class UploadComponent  {
         frmData.append("file", this.myFiles[i]);
       }
       frmData.append("userId",sessionStorage.getItem("userId"));
-      this.myhttp.post(this.service.uploadUrl,frmData).subscribe(
+      this.myhttp.post(this.service.baseUrl + "user/uploadFile",frmData).subscribe(
         data => {
           // SHOW A MESSAGE RECEIVED FROM THE WEB API.
           this.sMsg = data as string;

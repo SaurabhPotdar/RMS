@@ -12,7 +12,7 @@ export class RmsService {
     //http://localhost:9087/user/uploadFile
     host:string = window.location.hostname;  //https://www.w3schools.com/js/js_window_location.asp
     baseUrl:string= "http://" + this.host + ":9088/";
-    uploadUrl:string= this.host + ':9088/user/uploadFile';
+    //uploadUrl:string= "http://" + this.host + ':9088/user/uploadFile';
 
     //To pass job data between userpage and jobsingle page.
     private data={};
