@@ -1,0 +1,5 @@
+spring boot java jar not working
+
+In C:\Users\saurpotd\Documents\GitHub\RMS\RMS folder run mvn clean install
+
+mvn package spring-boot:repackage

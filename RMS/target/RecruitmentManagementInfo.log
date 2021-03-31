@@ -1,4 +1,0 @@
-2020-02-09 12:05:26,562 INFO com.cg.rms.RmsApplication [main] Starting RmsApplication v0.0.1-SNAPSHOT on Saurabh with PID 13444 (C:\Users\saura\Documents\GitHub\RMS\RMS\target\RMS-1.0.1-SNAPSHOT.jar started by saura in C:\Users\saura\Documents\GitHub\RMS\RMS\target)
-2020-02-09 12:05:26,564 DEBUG com.cg.rms.RmsApplication [main] Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
-2020-02-09 12:05:26,564 INFO com.cg.rms.RmsApplication [main] The following profiles are active: production
-2020-02-09 12:05:32,310 INFO com.cg.rms.RmsApplication [main] Started RmsApplication in 6.229 seconds (JVM running for 6.799)
