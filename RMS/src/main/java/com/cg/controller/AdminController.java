@@ -2,8 +2,6 @@ package com.cg.controller;
 
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.cg.dto.User;
 import com.cg.service.CompanyServiceImpl;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
  * @author Saurabh
  *
@@ -24,6 +24,7 @@ import com.cg.service.CompanyServiceImpl;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/admin")
+@Log4j2
 public class AdminController {
 	
 	@Autowired
@@ -34,8 +35,6 @@ public class AdminController {
 	@Autowired
 	private CompanyServiceImpl companyService;
 	
-	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
-	
 	/**
 	 * Checks for valid credentials and sends a role string for company or user.
 	 * @param email
@@ -45,7 +44,7 @@ public class AdminController {
 	@PostMapping(value="/login")
 	public ResponseEntity<?> login(@RequestParam("email") String email, @RequestParam("password") String password) {
 		try {
-			logger.trace("Checking if credentials are valid");
+			log.trace("Checking if credentials are valid");
 			Object object = companyService.login(email, password);
 			if(object instanceof User) {
 				return new ResponseEntity<Object>(object,HttpStatus.OK);
@@ -58,7 +57,7 @@ public class AdminController {
 			
 		}
 		catch (Exception exception) {
-			logger.error("Invalid credentials");
+			log.error("Invalid credentials");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}

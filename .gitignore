@@ -2,3 +2,6 @@
 RMS/target/classes/META-INF/maven/com.cg/RMS/pom.properties
 RMS/RecruitmentManagementInfo.log
 *.class
+RMS/.classpath
+RMS/target/classes/com/cg/configuration/RMSConfiguration.class
+*.class

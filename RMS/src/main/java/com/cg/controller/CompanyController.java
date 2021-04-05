@@ -4,8 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
@@ -29,6 +27,8 @@ import com.cg.dto.Response;
 import com.cg.dto.User;
 import com.cg.service.CompanyServiceImpl;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
  * @author Saurabh
  *
@@ -37,6 +37,7 @@ import com.cg.service.CompanyServiceImpl;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/company")
+@Log4j2
 public class CompanyController {
 	
 	@Autowired
@@ -48,8 +49,6 @@ public class CompanyController {
 	private CompanyServiceImpl companyService;
 
 	
-	private static final Logger logger = LoggerFactory.getLogger(CompanyController.class);
-
 	/**
 	 * Regestering a company
 	 * @param company
@@ -59,11 +58,11 @@ public class CompanyController {
 	public ResponseEntity<?> registerCompany(@RequestBody Company company) {
 		try {
 			companyService.registerCompany(company);
-			logger.trace("Registered company");
+			log.trace("Registered company");
 			return new ResponseEntity<Company>(company,HttpStatus.CREATED);
 		}
 		catch(Exception exception) {
-			logger.error("Caught validation exception in company/register Controller");
+			log.error("Caught validation exception in company/register Controller");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -84,11 +83,11 @@ public class CompanyController {
 	public ResponseEntity<?> addJob(@RequestParam("userId") int userId,@RequestBody Job job) {
 		try {
 			companyService.addJob(userId, job);
-			logger.trace("Added job");
+			log.trace("Added job");
 			return new ResponseEntity<Job>(job,HttpStatus.CREATED);
 		}
 		catch(Exception exception) {
-			logger.error("Caught exception in company/addjob Controller");
+			log.error("Caught exception in company/addjob Controller");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -106,7 +105,7 @@ public class CompanyController {
 			return new ResponseEntity<List<User>>(userList,HttpStatus.OK);
 		}
 		catch(Exception exception) {
-			logger.error("Exception in company/searchbyposition");
+			log.error("Exception in company/searchbyposition");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -123,7 +122,7 @@ public class CompanyController {
 			return new ResponseEntity<List<User>>(userList,HttpStatus.OK);
 		}
 		catch(Exception exception) {
-			logger.error("Exception in company/searchbyposition");
+			log.error("Exception in company/searchbyposition");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}

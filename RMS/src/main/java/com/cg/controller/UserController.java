@@ -6,8 +6,6 @@ import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
@@ -30,6 +28,8 @@ import com.cg.dto.Response;
 import com.cg.dto.User;
 import com.cg.service.UserServiceImpl;
 
+import lombok.extern.log4j.Log4j2;
+
 
 /**
  * @author Saurabh
@@ -39,6 +39,7 @@ import com.cg.service.UserServiceImpl;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/user")
+@Log4j2
 public class UserController {
 	
 	@Autowired
@@ -48,8 +49,6 @@ public class UserController {
 	//If there is more than one implementatation of same interface use @Qualifier.
 	@Autowired
 	private UserServiceImpl userService;
-	
-	private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 	
 	/**
 	 * Register a user
@@ -62,11 +61,11 @@ public class UserController {
 			//Set role as user, we can add admin directly from database
 			user.setRole("User");
 			userService.registerUser(user);
-			logger.trace("Registering company");
+			log.trace("Registering company");
 			return new ResponseEntity<User>(user,HttpStatus.CREATED);
 		}
 		catch(Exception exception) {
-			logger.error("Caught validation exception in company/register Controller");
+			log.error("Caught validation exception in company/register Controller");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -85,7 +84,7 @@ public class UserController {
 			return new ResponseEntity<List<Job>>(jobList,HttpStatus.OK);
 		}
 		catch(Exception exception) {
-			logger.error("Exception in user/searchbydesignation");
+			log.error("Exception in user/searchbydesignation");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -113,7 +112,7 @@ public class UserController {
 			}
 		}
 		catch(Exception exception) {
-			logger.error("Exception in company/searchbylocation");
+			log.error("Exception in company/searchbylocation");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -130,7 +129,7 @@ public class UserController {
 			return new ResponseEntity<List<Job>>(jobList,HttpStatus.OK);
 		}
 		catch(Exception exception) {
-			logger.error("Exception in company/searchbyexperience");
+			log.error("Exception in company/searchbyexperience");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -150,7 +149,7 @@ public class UserController {
 			return new ResponseEntity<List<Job>>(jobList,HttpStatus.OK);
 		}
 		catch(Exception exception) {
-			logger.error("Exception in company/searchbylocation");
+			log.error("Exception in company/searchbylocation");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}
@@ -164,12 +163,12 @@ public class UserController {
 	public ResponseEntity<?> applyForJob(@RequestParam("jobId") int jobId, @RequestParam("userId") int userId){
 		try {
 			userService.applyForJob(userId, jobId);
-			logger.trace("User: "+userId+" successfully applied for job: "+jobId);
+			log.trace("User: "+userId+" successfully applied for job: "+jobId);
 			return new ResponseEntity<>(HttpStatus.OK);  //Getting JSON parse error, when i tried to return string, so just returnning status code.
 			//return new ResponseEntity<String>("User: "+userId+" successfully applied for job: "+jobId,HttpStatus.OK);
 		}
 		catch (Exception exception) {
-			logger.error("Error in applyForJob in User Controller");
+			log.error("Error in applyForJob in User Controller");
 			return new ResponseEntity<String>(exception.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 	}

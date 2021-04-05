@@ -10,8 +10,6 @@ import java.util.Set;
 
 import javax.transaction.Transactional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -29,6 +27,8 @@ import com.cg.repository.DatabaseFileRepository;
 import com.cg.repository.JobRepository;
 import com.cg.repository.UserRepository;
 
+import lombok.extern.log4j.Log4j2;
+
 
 /**
  * @author Saurabh
@@ -36,6 +36,7 @@ import com.cg.repository.UserRepository;
  */
 @Service
 @Transactional
+@Log4j2
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
@@ -50,8 +51,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
     private DatabaseFileRepository dbFileRepository;
 	
-	private static final Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
-
 	/**
 	 * To register a user
 	 */
@@ -68,7 +67,7 @@ public class UserServiceImpl implements UserService {
 		}
 		else {
 			userRepository.save(user);
-			logger.trace("Registering user in service");
+			log.trace("Registering user in service");
 			return true;
 		}
 	}
@@ -105,7 +104,7 @@ public class UserServiceImpl implements UserService {
 			return newJobList;
 		}
 		else {
-			logger.error("No jobs found");
+			log.error("No jobs found");
 			throw new RmsException("No jobs found");
 		}
 		
@@ -128,7 +127,7 @@ public class UserServiceImpl implements UserService {
 			return newJobList;
 		}
 		else {
-			logger.error("No jobs found");
+			log.error("No jobs found");
 			throw new RmsException("No jobs found");
 		}
 	}
@@ -154,7 +153,7 @@ public class UserServiceImpl implements UserService {
 			return newJobList;
 		}
 		else {
-			logger.error("No jobs found");
+			log.error("No jobs found");
 			throw new RmsException("No jobs found");
 		}
 	}
@@ -167,11 +166,11 @@ public class UserServiceImpl implements UserService {
 	public List<Job> searchJobByExperience(int experience) {
 		List<Job> jobList = jobRepository.findByExperienceLessThanEqual(experience);
 		if(jobList.size()!=0) {
-			logger.trace("Getting jobList");
+			log.trace("Getting jobList");
 			return jobList;
 		}
 		else {
-			logger.error("No jobs found");
+			log.error("No jobs found");
 			throw new RmsException("No jobs found");
 		}
 	}
@@ -197,7 +196,7 @@ public class UserServiceImpl implements UserService {
 			return newJobList;
 		}
 		else {
-			logger.error("No jobs found");
+			log.error("No jobs found");
 			throw new RmsException("No jobs found");
 		}
 	}
@@ -209,11 +208,11 @@ public class UserServiceImpl implements UserService {
 	public Job searchJobById(int jobId) {
 		Job job = jobRepository.findById(jobId).orElse(null);
 		if(job!=null) {
-			logger.trace("Job found with Id: "+jobId);
+			log.trace("Job found with Id: "+jobId);
 			return job;
 		}
 		else {
-			logger.error("No jobs found");
+			log.error("No jobs found");
 			throw new RmsException("No jobs found");
 		}
 	}
@@ -225,11 +224,11 @@ public class UserServiceImpl implements UserService {
 	public User searchUser(int userId) {
 		User user = userRepository.findByUserId(userId);
 		if(user!=null) {
-			logger.trace("User found with Id: "+userId);
+			log.trace("User found with Id: "+userId);
 			return user;
 		}
 		else {
-			logger.error("No user found");
+			log.error("No user found");
 			throw new RmsException("No user found with Id: "+userId);
 		}
 	}
@@ -253,15 +252,15 @@ public class UserServiceImpl implements UserService {
 		//Update user list
 		appliedJob.add(job);
 		user.setJobs(appliedJob);
-		logger.trace("Updated user list in service");
+		log.trace("Updated user list in service");
 		
 		//Update job list
 		usersApplied.add(user);
 		job.setUsersApplied(usersApplied);
-		logger.trace("Updated job list in service");
+		log.trace("Updated job list in service");
 		
 		userRepository.save(user);  //Save user. (User cascades job)
-		logger.trace("Saved user in service");
+		log.trace("Saved user in service");
 		
 		
 		return true;	
@@ -278,7 +277,7 @@ public class UserServiceImpl implements UserService {
         try {
             // Check if the file's name contains invalid characters
             if(fileName.contains("..")) {
-            	logger.error("Invalid path sequence exception in Service");
+            	log.error("Invalid path sequence exception in Service");
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
@@ -288,7 +287,7 @@ public class UserServiceImpl implements UserService {
             user.setFile(dbFile);
             userRepository.save(user);
             dbFileRepository.save(dbFile);
-            logger.trace("File added to database");
+            log.trace("File added to database");
             return dbFile;
         } catch (IOException ex) {
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
@@ -312,7 +311,7 @@ public class UserServiceImpl implements UserService {
     	User user = searchUser(userId);
     	DatabaseFile file = user.getFile();
     	if(file==null) {
-    		logger.error("No file found");
+    		log.error("No file found");
     		throw new RmsException("No file uploaded by user");
     	}
     	return file;

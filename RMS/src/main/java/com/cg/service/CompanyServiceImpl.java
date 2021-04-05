@@ -7,8 +7,6 @@ import java.util.Set;
 
 import javax.transaction.Transactional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -27,12 +25,15 @@ import com.cg.repository.DatabaseFileRepository;
 import com.cg.repository.JobRepository;
 import com.cg.repository.UserRepository;
 
+import lombok.extern.log4j.Log4j2;
+
 /**
  * @author Saurabh
  *
  */
 @Service
 @Transactional
+@Log4j2
 public class CompanyServiceImpl implements CompanyService{
 
 	@Autowired
@@ -47,8 +48,6 @@ public class CompanyServiceImpl implements CompanyService{
 	@Autowired
 	private DatabaseFileRepository dbFileRepository;
 	
-	private static final Logger logger = LoggerFactory.getLogger(CompanyServiceImpl.class);
-
 	/**
 	 * Description: To register a company
 	 */
@@ -61,7 +60,7 @@ public class CompanyServiceImpl implements CompanyService{
 			throw new RmsException("Email already exists");
 		else {
 			companyRepository.save(company);
-			logger.trace("Registering company");
+			log.trace("Registering company");
 			return true;
 		}
 	}
@@ -75,7 +74,7 @@ public class CompanyServiceImpl implements CompanyService{
 		//First find the company which is logged in.
 		Company company = companyRepository.findById(userId).orElse(null);
 		if(company!=null) {
-			logger.trace("Found Company with Id: "+company.getCompanyId());
+			log.trace("Found Company with Id: "+company.getCompanyId());
 			job.setLocation(job.getLocation().toUpperCase());
 			job.setDesignation(job.getDesignation().toUpperCase());
 			job.setCompany(company);
@@ -83,11 +82,11 @@ public class CompanyServiceImpl implements CompanyService{
 			List<Job> jobList = company.getJobs();
 			jobList.add(job);
 			companyRepository.save(company);
-			logger.trace("Adding job");
+			log.trace("Adding job");
 			return true;
 		}
 		else {
-			logger.error("Company not found with id: "+userId);
+			log.error("Company not found with id: "+userId);
 			throw new RmsException("Company not found");
 		}
 	}
@@ -115,11 +114,11 @@ public class CompanyServiceImpl implements CompanyService{
 		else
 			userList = userRepository.findByPosition(position);
 		if(userList.size()!=0) {
-			logger.trace("Getting userList");
+			log.trace("Getting userList");
 			return userList;
 		}
 		else {
-			logger.error("No user found with position: "+position);
+			log.error("No user found with position: "+position);
 			throw new RmsException("No user found");
 		}
 	}
@@ -132,11 +131,11 @@ public class CompanyServiceImpl implements CompanyService{
 	public List<User> searchUserByExperience(int experience) {
 		List<User> userList = userRepository.findByExperienceGreaterThanEqual(experience);
 		if(userList.size()!=0) {
-			logger.trace("Getting userList");
+			log.trace("Getting userList");
 			return userList;
 		}
 		else {
-			logger.error("No user found with experience: "+experience);
+			log.error("No user found with experience: "+experience);
 			throw new RmsException("No user found");
 		}
 	}
@@ -213,7 +212,7 @@ public class CompanyServiceImpl implements CompanyService{
         try {
             // Check if the file's name contains invalid characters
             if(fileName.contains("..")) {
-            	logger.error("Invalid path sequence exception in Service");
+            	log.error("Invalid path sequence exception in Service");
                 throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
             }
 
@@ -223,7 +222,7 @@ public class CompanyServiceImpl implements CompanyService{
             company.setFile(dbFile);
             companyRepository.save(company);
             dbFileRepository.save(dbFile);
-            logger.trace("File added to database");
+            log.trace("File added to database");
             return dbFile;
         } catch (IOException ex) {
             throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
@@ -247,7 +246,7 @@ public class CompanyServiceImpl implements CompanyService{
     	Company company = searchCompany(companyId);
     	DatabaseFile file = company.getFile();
     	if(file==null) {
-    		logger.error("No file found");
+    		log.error("No file found");
     		throw new RmsException("No file uploaded by user");
     	}
     	return file;
