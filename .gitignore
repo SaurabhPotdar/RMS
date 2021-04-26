@@ -5,3 +5,7 @@ RMS/RecruitmentManagementInfo.log
 RMS/.classpath
 RMS/target/classes/com/cg/configuration/RMSConfiguration.class
 *.class
+RMS/.classpath
+RMS/.settings/org.eclipse.jdt.apt.core.prefs
+RMS/.settings/org.eclipse.jdt.core.prefs
+RMS/.settings/org.eclipse.jdt.apt.core.prefs
